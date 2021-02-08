@@ -36,8 +36,8 @@ namespace PopKuru
                     break;
             }
 
-            // Testing to initialize a character
 
+            // Testing to initialize a character
             Character TestName = new Character("Margot");
 
         }
