@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace PopKuru
 {
-    public class Menu : MonoBehaviour
+    public class Menu
     {
         // Start is called before the first frame update
         void Start()

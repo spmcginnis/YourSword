@@ -6,9 +6,9 @@ namespace PopKuru
 {
     public class CutScene : Scene
     {
-        public CutScene(bool isIntro = false, bool isEnd = false)
+        public CutScene(bool isIntro = false, bool isEnding = false)
         {
-            if (isIntro||isEnd) {
+            if (isIntro||isEnding) {
                 this.Menu = new StartMenu();
             } else {
                 this.Menu = new GameMenu();

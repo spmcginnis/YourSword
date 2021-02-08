@@ -18,14 +18,6 @@ namespace PopKuru
             get {return this.isDone;}
             protected set {this.isDone = value;}
         }
-
-    
-        
-        
-        
-        
-        
-        
         
         // behaviors that all narrative scenes will have
             // Listen for user input and respond as needed
