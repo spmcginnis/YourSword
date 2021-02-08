@@ -8,8 +8,16 @@ namespace PopKuru
     public class SceneManager : MonoBehaviour
     {
         public Scene CurrentScene;
-        
         //TODO Expose the necessary data from CurrentScene to Unity
+
+        // Cashe the menu object
+        GameObject[] Menus;
+        const string menu = "Menu";
+
+        void Awake()
+        {
+            Menus = GameObject.FindGameObjectsWithTag(menu);
+        }
 
         void Start()
         {
@@ -55,8 +63,27 @@ namespace PopKuru
             yield break;
         }
 
+        //TODO put this in SaveLoadManager or GameState (?)
         public IEnumerator SaveGame(){
             yield break;
+        }
+
+        // Show and hide menu
+        public void ShowMenu(string name="test") // TODO string param currently not used
+        {
+            if ( Menus.Length==0 || Menus[0] == null ) { return; } // Will this be the case if it finds null?
+            foreach (GameObject item in Menus)
+            {
+                item.GetComponent<Canvas>().sortingOrder = 1;
+            }
+        }
+        public void HideMenu(string name="test")
+        {
+            if ( Menus.Length==0 || Menus[0] == null ) { return; }
+            foreach (GameObject item in Menus)
+            {
+                item.GetComponent<Canvas>().sortingOrder = -1;
+            }
         }
 
         // Call image transition from (where?)
