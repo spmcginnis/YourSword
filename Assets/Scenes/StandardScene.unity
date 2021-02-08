@@ -868,6 +868,26 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 64
       objectReference: {fileID: 0}
+    - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
+      propertyPath: m_Colors.m_NormalColor.a
+      value: 0.5019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 0.0754717
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0.0754717
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 0.0754717
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
     - target: {fileID: 5136178159150563952, guid: c12111b59801e474fa66b66714cff367, type: 3}
       propertyPath: m_Name
       value: LoadButton
@@ -1053,6 +1073,26 @@ PrefabInstance:
     - target: {fileID: 3581382830901873055, guid: c12111b59801e474fa66b66714cff367, type: 3}
       propertyPath: m_enableWordWrapping
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
+      propertyPath: m_Colors.m_NormalColor.a
+      value: 0.5019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 0.0754717
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0.0754717
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 0.0754717
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.a
+      value: 0.78431374
       objectReference: {fileID: 0}
     - target: {fileID: 5136178159150563952, guid: c12111b59801e474fa66b66714cff367, type: 3}
       propertyPath: m_Name
@@ -1576,6 +1616,26 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 64
       objectReference: {fileID: 0}
+    - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
+      propertyPath: m_Colors.m_NormalColor.a
+      value: 0.5019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 0.0754717
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0.0754717
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 0.0754717
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
     - target: {fileID: 5136178159150563952, guid: c12111b59801e474fa66b66714cff367, type: 3}
       propertyPath: m_Name
       value: SaveButton
@@ -1762,6 +1822,26 @@ PrefabInstance:
       propertyPath: m_enableWordWrapping
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
+      propertyPath: m_Colors.m_NormalColor.a
+      value: 0.5019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 0.0754717
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0.0754717
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 0.0754717
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
     - target: {fileID: 5136178159150563952, guid: c12111b59801e474fa66b66714cff367, type: 3}
       propertyPath: m_Name
       value: QuitButton
@@ -1914,15 +1994,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8512025522289747576, guid: faee9738d4254384cb8574a03668efb5, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 0.4811321
       objectReference: {fileID: 0}
     - target: {fileID: 8512025522289747576, guid: faee9738d4254384cb8574a03668efb5, type: 3}
       propertyPath: m_Color.g
-      value: 0.43038216
+      value: 0.455774
       objectReference: {fileID: 0}
     - target: {fileID: 8512025522289747576, guid: faee9738d4254384cb8574a03668efb5, type: 3}
       propertyPath: m_Color.r
-      value: 0.5660378
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8512025522289747576, guid: faee9738d4254384cb8574a03668efb5, type: 3}
       propertyPath: m_Material
@@ -2077,6 +2157,54 @@ PrefabInstance:
     - target: {fileID: 3581382830901873055, guid: c12111b59801e474fa66b66714cff367, type: 3}
       propertyPath: m_enableWordWrapping
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
+      propertyPath: m_Colors.m_NormalColor.a
+      value: 0.5019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 0.0754717
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0.0754717
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 0.0754717
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1865493055}
+    - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HideMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PopKuru.SceneManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5136178159150563952, guid: c12111b59801e474fa66b66714cff367, type: 3}
       propertyPath: m_Name
@@ -2571,7 +2699,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!224 &2036361889
 RectTransform:

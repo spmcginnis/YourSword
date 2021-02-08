@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace PopKuru
 {
-    public class FeatureTesting : MonoBehaviour
+    public class MenuTesting : MonoBehaviour
     {
         SceneManager SceneManager;
 
@@ -12,20 +12,19 @@ namespace PopKuru
             SceneManager = GameObject.Find("SceneManager").GetComponent<SceneManager>();
         }
 
+
+
+
+        // Testing the Show/Hide Menu
         void Start()
         {
             SceneManager.ShowMenu();
         }
-
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.M))
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
                 SceneManager.ShowMenu();
-            }
-            if (Input.GetKeyDown(KeyCode.H))
-            {
-                SceneManager.HideMenu();
             }
         }
 
