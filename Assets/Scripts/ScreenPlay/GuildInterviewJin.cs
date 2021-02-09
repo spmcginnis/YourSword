@@ -22,7 +22,7 @@ namespace PopKuru
                 {new Line(
                     speaker: margot,
                     "Test Dialogue",
-                    new List<string>() {arg1, arg2}
+                    new List<string>() {cmd1, cmd2}
                 )}, 
                 {new Line(
                     storyText: "Test dialogue2.  Should use last speaker by default."

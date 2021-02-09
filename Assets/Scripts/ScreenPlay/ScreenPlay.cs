@@ -12,10 +12,10 @@ namespace PopKuru
         protected const string margot = "Margot";
         protected const string jin = "Jin";
 
-        // Full List of Args -> enum (?)
-        protected const string arg1 = "test arg1";
-        protected const string arg2 = "test arg2";
-
+        // Full List of Commands -> enum (?)
+        protected const string cmd1 = "test cmd1";
+        protected const string cmd2 = "test cmd2";
+        protected const string pleasant = "ChangeExpression:Pleasant";
 
         // ScreenPlay Fields and Properties
         public Dictionary<string, string> BackgroundImagePaths {get; protected set;} // TODO offload this to a location class
@@ -26,10 +26,10 @@ namespace PopKuru
         {
             public string Speaker {get; protected set;}
             public string StoryText {get; protected set;}
-            public List<string> Args {get; protected set;}
+            public List<string> Commands {get; protected set;}
             string LastSpeaker = "";
 
-            public Line(string speaker = "", string storyText = "",  List<string> Args = null)
+            public Line(string speaker = "", string storyText = "",  List<string> Commands = null)
             {
                 if (speaker == "")
                 {
@@ -38,7 +38,7 @@ namespace PopKuru
                 
                 this.Speaker = speaker;
                 this.StoryText = storyText;
-                this.Args = Args;
+                this.Commands = Commands;
                 this.LastSpeaker = speaker;
             }
         }
