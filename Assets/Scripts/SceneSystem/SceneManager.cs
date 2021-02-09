@@ -18,7 +18,10 @@ namespace PopKuru
         ScreenPlay CurrentChapter;
         
         // Cashe the character objects for the scene.
-        List<Character> Characters;
+        public List<Character> Characters {get; private set; }
+
+        // Cashe the BackgroundImageLocations for the scene. //TODO Change to a list of location objects
+        public Dictionary<string, string> BackgroundImages {get; private set; }
 
         void Awake()
         {
@@ -55,7 +58,7 @@ namespace PopKuru
         void Start()
         {
             LoadCharacters();
-            // LoadBackgrounds();
+            LoadBackgrounds();
 
         }
 
@@ -111,7 +114,14 @@ namespace PopKuru
         // TODO Load Character Prefabs offscreen
         void LoadCharacterPrefabs()
         {
+            
+        }
 
+        // TODO Load Background Images as Location class objects rather than a dictionary of references
+        void LoadBackgrounds()
+        {
+            if (CurrentChapter.BackgroundImagePaths.Count == 0) {return;} // Guard Clause
+            BackgroundImages = CurrentChapter.BackgroundImagePaths;
         }
 
         // Call image transition from (where?)

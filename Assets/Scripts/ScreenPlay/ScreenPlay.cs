@@ -6,6 +6,8 @@ namespace PopKuru
 {
     public abstract class ScreenPlay
     {
+        public string Title {get; protected set;}
+
         // Full List of Names -> enum (?)
         protected const string margot = "Margot";
         protected const string jin = "Jin";
@@ -15,7 +17,8 @@ namespace PopKuru
         protected const string arg2 = "test arg2";
 
 
-        public string Name {get; protected set;}
+        // ScreenPlay Fields and Properties
+        public Dictionary<string, string> BackgroundImagePaths {get; protected set;} // TODO offload this to a location class
         public List<Line> Text {get; protected set;}
         public List<string> CastOfCharacters;
 

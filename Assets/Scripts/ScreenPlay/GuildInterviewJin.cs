@@ -8,9 +8,11 @@ namespace PopKuru
     {
         public GuildInterviewJin()
         {
-            
-            // Do I need the character objects here?  Or just the names?
-            // Shouldn't the SceneManager initialize the character objects?
+            this.Title = "Guild Interview with Jin.";   
+            this.BackgroundImagePaths = new Dictionary<string, string>()
+            {
+                {"TestBackgroundName", "TestBackgroundURL"} //TEMP
+            };
             this.CastOfCharacters = new List<string>() {
                 margot, jin
             };
