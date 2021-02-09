@@ -20,6 +20,7 @@ namespace PopKuru
             this.Text = new List<Line>()
             {
                 {new Line(
+                    speaker:none,
                     commands: new List<string>() {changeBackground+"GuildInterviewBG"} //TEMP
                 )},
                 {new Line(
@@ -152,7 +153,7 @@ namespace PopKuru
                     storyText: "Fine."
                 )},
                 {new Line(
-                    speaker:"",
+                    speaker:narrator,
                     storyText: "[[She does the thing...]]" // TEMP
                 )},
                 {new Line(
@@ -259,7 +260,7 @@ namespace PopKuru
                     storyText: "... Apparently they have some kind of understanding."
                 )},
                 {new Line(
-
+                    speaker:narrator,
                     storyText: "[CutScene: MC turns and looks toward them, her eyes still obscured. She smiles without her teeth.]"
                 )},
                 {new Line(
@@ -309,6 +310,10 @@ namespace PopKuru
                 {new Line(
                     storyText: "This is Timbervale, dummy.",
                     commands: new List<string>() {pleasant+margot}
+                )},
+                {new Line(
+                    speaker:none,
+                    commands: new List<string>() {endChapter}
                 )}
             };
         }
