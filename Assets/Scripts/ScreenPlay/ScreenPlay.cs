@@ -41,20 +41,21 @@ namespace PopKuru
         public List<Line> Text {get; protected set;}
         public List<string> CastOfCharacters;
 
+
+        public static string LastSpeaker = "test";
         public class Line
         {
             public string Speaker {get; protected set;}
             public string StoryText {get; protected set;}
             public List<string> Commands {get; protected set;}
-            string LastSpeaker = "";
 
             public Line(    string speaker = "",
                             string storyText = "",
                             List<string> commands = null )
             {
-                if (speaker == "")
+                if (speaker == "" || speaker == null)
                 {
-                    this.Speaker = this.LastSpeaker;
+                    speaker = LastSpeaker;
                 }
                 if (commands == null)
                 {
@@ -63,7 +64,7 @@ namespace PopKuru
                 this.Speaker = speaker;
                 this.StoryText = storyText;
                 this.Commands = commands;
-                this.LastSpeaker = speaker;
+                LastSpeaker = (this.Speaker != LastSpeaker) ? this.Speaker : LastSpeaker;
             }
         }
     }

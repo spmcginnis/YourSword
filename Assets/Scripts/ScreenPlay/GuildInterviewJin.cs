@@ -234,6 +234,7 @@ namespace PopKuru
                     commands: new List<string>() {sarcastic+margot}
                 )},
                 {new Line(
+                    speaker:none,
                     commands: new List<string>() {changeBackground+"MCinGuild"} //TEMP //TODO refactor out magic strings
                 )},
                 {new Line(
@@ -264,6 +265,7 @@ namespace PopKuru
                     storyText: "[CutScene: MC turns and looks toward them, her eyes still obscured. She smiles without her teeth.]"
                 )},
                 {new Line(
+                    speaker:none,
                     commands: new List<string>() {changeBackground+"GuildInterviewBG"} //TEMP
                 )},
                 {new Line(
