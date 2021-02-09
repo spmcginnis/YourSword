@@ -20,7 +20,10 @@ namespace PopKuru
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 if (Index >= CurrentChapter.Text.Count) { Index = 0; }
-                print(CurrentChapter.Text[Index].StoryText);
+                string commandString = string.Join(" ", CurrentChapter.Text[Index].Commands.ToArray());
+                print(
+                    $"{CurrentChapter.Text[Index].Speaker}: {CurrentChapter.Text[Index].StoryText} (With commands: {commandString})"
+                );
                 Index++;
 
             }

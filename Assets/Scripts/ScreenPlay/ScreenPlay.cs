@@ -48,13 +48,16 @@ namespace PopKuru
 
             public Line(    string speaker = "",
                             string storyText = "",
-                            List<string> commands = null    )
+                            List<string> commands = null )
             {
                 if (speaker == "")
                 {
                     this.Speaker = this.LastSpeaker;
                 }
-                
+                if (commands == null)
+                {
+                    commands = new List<string>();
+                }
                 this.Speaker = speaker;
                 this.StoryText = storyText;
                 this.Commands = commands;
