@@ -14,9 +14,13 @@ namespace PopKuru
         GameObject[] Menus;
         const string menu = "Menu";
 
+        // Cashe the character objects for the scene.
+        Character[] Characters;
+
         void Awake()
         {
             Menus = GameObject.FindGameObjectsWithTag(menu);
+            LoadCharacters();
         }
 
         void Start()
@@ -85,6 +89,13 @@ namespace PopKuru
                 item.GetComponent<Canvas>().sortingOrder = -1;
             }
         }
+
+        // Load character prefabs for the scene, off stage.
+        public void LoadCharacters()
+        {
+            Debug.Log("not implemented", this);
+        }
+
 
         // Call image transition from (where?)
 
