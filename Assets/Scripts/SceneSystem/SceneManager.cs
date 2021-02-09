@@ -58,8 +58,8 @@ namespace PopKuru
         void Start()
         {
             LoadCharacters();
+            LoadCharacterPrefabs();
             LoadBackgrounds();
-
         }
 
         void Update()
