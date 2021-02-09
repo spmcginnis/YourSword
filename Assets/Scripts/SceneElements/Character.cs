@@ -16,8 +16,7 @@ namespace PopKuru
 
             // Initialize Image Index for that name
             ImageSetList = ImageSet.InitializeImageSets(name);
-
-            Debug.Log($"Character object for {this.Name} initialized. {this.ImageSetList[0].IndexOf} image set: {this.ImageSetList[0].Body}, {this.ImageSetList[0].FaceList["smile"]}.");
+            
         }
  
     }

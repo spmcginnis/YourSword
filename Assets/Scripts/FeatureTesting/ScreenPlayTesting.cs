@@ -6,12 +6,12 @@ namespace PopKuru
 {
     public class ScreenPlayTesting : MonoBehaviour
     {
-        private ScreenPlay ChapterTest;
+        private ScreenPlay CurrentChapter;
         private int Index; 
 
         void Start()
         {
-            ChapterTest = new GuildInterviewJin();
+            CurrentChapter = new GuildInterviewJin();
         }
 
 
@@ -19,8 +19,8 @@ namespace PopKuru
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                if (Index >= ChapterTest.Text.Count) { Index = 0; }
-                print(ChapterTest.Text[Index].StoryText);
+                if (Index >= CurrentChapter.Text.Count) { Index = 0; }
+                print(CurrentChapter.Text[Index].StoryText);
                 Index++;
 
             }

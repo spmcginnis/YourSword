@@ -540,6 +540,7 @@ GameObject:
   m_Component:
   - component: {fileID: 897848201}
   - component: {fileID: 897848202}
+  - component: {fileID: 897848203}
   m_Layer: 0
   m_Name: FeatureTestingHook
   m_TagString: Untagged
@@ -568,9 +569,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 897848200}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdbc76253d476fc4093c314f143e606e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &897848203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897848200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c5f7e7e152b9e42903e4e5069ae7a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &949638079

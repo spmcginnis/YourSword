@@ -14,17 +14,20 @@ namespace PopKuru
         GameObject[] Menus;
         const string menu = "Menu";
 
+        // Cashe the ScreenPlay object
+        ScreenPlay CurrentChapter;
+        
         // Cashe the character objects for the scene.
-        Character[] Characters;
+        List<Character> Characters;
 
         void Awake()
         {
             Menus = GameObject.FindGameObjectsWithTag(menu);
-            LoadCharacters();
-        }
-
-        void Start()
-        {
+            
+            // Initialize the current chapter object.  Here?  or in Main?
+            // TODO Get the chapter from game state
+            CurrentChapter = new GuildInterviewJin();
+            
             // Initialize the CurrentScene based on the gamestate 
             string GameStatePlaceholder = "StandardScene";
             
@@ -47,10 +50,12 @@ namespace PopKuru
                     CurrentScene = new StandardScene();
                     break;
             }
+        }
 
-
-            // Testing to initialize a character
-            Character TestName = new Character("Margot");
+        void Start()
+        {
+            LoadCharacters();
+            // LoadBackgrounds();
 
         }
 
@@ -91,11 +96,23 @@ namespace PopKuru
         }
 
         // Load character prefabs for the scene, off stage.
-        public void LoadCharacters()
+        void LoadCharacters()
         {
-            Debug.Log("not implemented", this);
-        }
+            if (CurrentChapter.CastOfCharacters.Count == 0) {return;} // Guard Clause
 
+            Characters = new List<Character>();
+            foreach (string name in CurrentChapter.CastOfCharacters)
+            {
+                Character toAdd = new Character(name);
+                Characters.Add(toAdd);
+            }
+        }
+        
+        // TODO Load Character Prefabs offscreen
+        void LoadCharacterPrefabs()
+        {
+
+        }
 
         // Call image transition from (where?)
 
