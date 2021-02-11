@@ -12,16 +12,20 @@ namespace PopKuru
 
         TextMeshProUGUI SpeakerNameText;
         TextMeshProUGUI StoryText;
+        List<BackgroundImage> Backgrounds;
 
         void Awake()
         {
             SpeakerNameText = GameObject.Find("SpeakerNameText").GetComponent<TextMeshProUGUI>();
             StoryText = GameObject.Find("StoryText").GetComponent<TextMeshProUGUI>();
+
+            Backgrounds = new List<BackgroundImage>();
         }
 
         void Start()
         {
             CurrentChapter = new GuildInterviewJin();
+            Backgrounds.Add(new BackgroundImage(BackgroundImage.ImageNameEnum.GuildHall1));
         }
 
 
@@ -43,6 +47,11 @@ namespace PopKuru
 
                 Index++;
 
+            }
+
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                print(Backgrounds[0].File);
             }
         }
     }
