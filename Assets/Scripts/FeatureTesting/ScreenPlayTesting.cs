@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 namespace PopKuru
 {
     public class ScreenPlayTesting : MonoBehaviour
     {
-        private ScreenPlay CurrentChapter;
-        private int Index; 
+        ScreenPlay CurrentChapter;
+        int Index; 
 
         TextMeshProUGUI SpeakerNameText;
         TextMeshProUGUI StoryText;
         List<BackgroundImage> Backgrounds;
+
+        GameObject BackgroundPanel;
+        Image BPImageHook;
 
         void Awake()
         {
@@ -20,12 +24,18 @@ namespace PopKuru
             StoryText = GameObject.Find("StoryText").GetComponent<TextMeshProUGUI>();
 
             Backgrounds = new List<BackgroundImage>();
+
+            BackgroundPanel = GameObject.Find("BackgroundPanel").transform.Find("Image").gameObject;
+            BPImageHook = BackgroundPanel.GetComponent<Image>();
         }
 
         void Start()
         {
             CurrentChapter = new GuildInterviewJin();
             Backgrounds.Add(new BackgroundImage(BackgroundImage.ImageNameEnum.GuildHall1));
+            
+            BPImageHook.color = new Color (1f, 1f, 1f, a:0.5f);
+            BPImageHook.sprite = Resources.Load<Sprite>(Backgrounds[0].File);
         }
 
 
@@ -51,6 +61,8 @@ namespace PopKuru
 
             if (Input.GetKeyDown(KeyCode.I))
             {
+
+                
                 print(Backgrounds[0].File);
             }
         }
