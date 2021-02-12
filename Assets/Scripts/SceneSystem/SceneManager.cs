@@ -30,9 +30,9 @@ namespace PopKuru
         {
             Menus = GameObject.FindGameObjectsWithTag(menu);
             CharacterPanel = GameObject.Find("CharacterPanel").GetComponent<RectTransform>();
-            // Initialize the current chapter object.  Here?  or in Main?
+            
             // TODO Get the chapter from game state
-            CurrentChapter = new GuildInterviewJin();
+            CurrentChapter = new GuildInterviewJin(); 
             
             // Initialize the CurrentScene based on the gamestate 
             string GameStatePlaceholder = "StandardScene";
@@ -130,7 +130,7 @@ namespace PopKuru
                 Object prefab = Resources.Load($"Prefabs/Character[{name}]"); // 1. load the prefab
                 GameObject prefabGameObj = Instantiate(prefab) as GameObject; // 2. Instantiate the prefab as a GameObject
                 prefabGameObj.transform.parent = CharacterPanel; // 3. Set the parent property to be the character panel
-            // TODO implement moving offstage
+            // TODO implement moving offstage to start
             }
 
         }
