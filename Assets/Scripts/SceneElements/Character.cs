@@ -7,11 +7,12 @@ namespace PopKuru
     public class Character
     {
         public string Name { get; private set; }
+               
         public List<ImageSet> ImageSetList = new List<ImageSet>();
 
         // Unity Game Object references
 
-        public RectTransform CharacterPrefabRT {get; private set;}
+        public RectTransform RT {get; set;}
 
         public Character(string name)
         {
@@ -20,6 +21,8 @@ namespace PopKuru
 
             // Initialize Image Index for that name
             ImageSetList = ImageSet.InitializeImageSets(name);
+
+
         }
     }
 }

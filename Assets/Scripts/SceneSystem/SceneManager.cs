@@ -129,16 +129,16 @@ namespace PopKuru
                 Characters.Add(toAdd);
             }
         }
-                
+    
         void LoadCharacterPrefabs() // attach the prefab to the character panel
         {
-            foreach (string name in CurrentChapter.CastOfCharacters)
+            foreach (Character character in Characters)
             {
-                Object prefab = Resources.Load($"Prefabs/CharacterPrefabs/Character[{name}]"); // 1. load the prefab
+                Object prefab = Resources.Load($"Prefabs/CharacterPrefabs/Character[{character.Name}]"); // 1. load the prefab
                 GameObject prefabGameObj = Instantiate(prefab) as GameObject; // 2. Instantiate the prefab as a GameObject
                 prefabGameObj.transform.SetParent(CharacterPanel); // 3. Set the parent property to be the character panel
-                RectTransform RT = prefabGameObj.GetComponent<RectTransform>();
-                Mover.MoveTo(RT, StagePosition.offStage); // move offstage to start
+                character.RT = prefabGameObj.GetComponent<RectTransform>();
+                Mover.MoveTo(character.RT, StagePosition.center); // move offstage to start
             }
         }
 
@@ -150,8 +150,7 @@ namespace PopKuru
             BackgroundImages = CurrentChapter.BackgroundImagePaths;
         }
 
-        // Call image transition from (where?)
-
-        // Call music transition from (where?)
+        // Call image transition from (where?) // Call music transition from (where?) // No.  Transitions will be called by the game manager.
+        
     }
 }
