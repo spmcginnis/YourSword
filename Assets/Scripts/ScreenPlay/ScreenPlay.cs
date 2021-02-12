@@ -9,13 +9,13 @@ namespace PopKuru
         public string Title {get; protected set;}
 
         // Full List of Names -> enum (?)
-        protected const string margot = "Margot";
-        protected const string jin = "Jin";
-        protected const string narrator = "Narrator";
-        protected const string none = " ";
+        public const string margot = "Margot";
+        public const string jin = "Jin";
+        public const string narrator = "Narrator";
+        public const string none = " ";
 
         // Full List of Commands -> enum (?) dictionary (?)
-            // Expression and pose changes
+            // Expression and pose changes // emote
         protected const string pleasant = "ChangeExpressionPleasant:";
         protected const string sarcastic = "ChangeExpressionSarcastic:";
         protected const string impassive = "ChangeExpressionImpassive:";

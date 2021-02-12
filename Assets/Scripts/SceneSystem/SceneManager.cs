@@ -23,10 +23,13 @@ namespace PopKuru
         // Cashe the BackgroundImageLocations for the scene. //TODO Change to a list of location objects
         public Dictionary<string, string> BackgroundImages {get; private set; }
 
+        // Unity Game Objects
+        public RectTransform CharacterPanel {get; private set;}
+
         void Awake()
         {
             Menus = GameObject.FindGameObjectsWithTag(menu);
-            
+            CharacterPanel = GameObject.Find("CharacterPanel").GetComponent<RectTransform>();
             // Initialize the current chapter object.  Here?  or in Main?
             // TODO Get the chapter from game state
             CurrentChapter = new GuildInterviewJin();
@@ -59,7 +62,12 @@ namespace PopKuru
         {
             LoadCharacters();
             LoadCharacterPrefabs();
+            // Once the prefabs are loaded, can set transform
+            // moveto offstage
+
             LoadBackgrounds();
+            // LoadCutScenes(); // If cutscenes are part of standardscene // cutscene and special cutscene?
+
         }
 
         void Update()
@@ -111,10 +119,20 @@ namespace PopKuru
             }
         }
         
-        // TODO Load Character Prefabs offscreen
+        // TODO Load Character Prefabs offscreen // TODO change the input type from generic string to controlled vocabulary
         void LoadCharacterPrefabs()
         {
-            
+            Debug.LogWarning("LoadCharacterPrefabs Not implemented.");
+            // TODO attach the prefab to the character panel
+
+            foreach (string name in CurrentChapter.CastOfCharacters)
+            {
+                Object prefab = Resources.Load($"Prefabs/Character[{name}]"); // 1. load the prefab
+                GameObject prefabGameObj = Instantiate(prefab) as GameObject; // 2. Instantiate the prefab as a GameObject
+                prefabGameObj.transform.parent = CharacterPanel; // 3. Set the parent property to be the character panel
+            // TODO implement moving offstage
+            }
+
         }
 
         // TODO Load Background Images as Location class objects rather than a dictionary of references
