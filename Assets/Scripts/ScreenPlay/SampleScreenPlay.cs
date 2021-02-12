@@ -4,18 +4,24 @@ using UnityEngine;
 
 namespace PopKuru
 {
-    public class SampleScreenPlay : MonoBehaviour
+    public class SampleScreenPlay : ScreenPlay
     {
-        // Start is called before the first frame update
-        void Start()
+        public SampleScreenPlay()
         {
-        
-        }
+            this.Title = "Sample ScreenPlay for Testing";
+            this.CastOfCharacters = new List<string>()
+            {
+                margot, jin
+            };
 
-        // Update is called once per frame
-        void Update()
-        {
-        
+            this.Text = new List<Line>()
+            {
+                {new Line(
+                    speaker: margot,
+                    "Oh, sorry...you’re the one who wanted to apply for guild membership today, aren’t you? I wasn’t expecting you for a while.",
+                    new List<string>() {pleasant+margot}
+                )}
+            };
         }
     }
 }

@@ -32,7 +32,7 @@ namespace PopKuru
             CharacterPanel = GameObject.Find("CharacterPanel").GetComponent<RectTransform>();
             
             // TODO Get the chapter from game state
-            CurrentChapter = new GuildInterviewJin(); 
+            CurrentChapter = new SampleScreenPlay(); 
             
             // Initialize the CurrentScene based on the gamestate 
             string GameStatePlaceholder = "StandardScene";
@@ -60,12 +60,15 @@ namespace PopKuru
 
         void Start()
         {
+
             LoadCharacters();
+
             LoadCharacterPrefabs();
+
             // Once the prefabs are loaded, can set transform
             // moveto offstage
 
-            LoadBackgrounds();
+            // LoadBackgrounds();
             // LoadCutScenes(); // If cutscenes are part of standardscene // cutscene and special cutscene?
 
         }
@@ -122,14 +125,14 @@ namespace PopKuru
         // TODO Load Character Prefabs offscreen // TODO change the input type from generic string to controlled vocabulary
         void LoadCharacterPrefabs()
         {
-            Debug.LogWarning("LoadCharacterPrefabs Not implemented.");
-            // TODO attach the prefab to the character panel
+ 
+            // attach the prefab to the character panel
 
             foreach (string name in CurrentChapter.CastOfCharacters)
             {
-                Object prefab = Resources.Load($"Prefabs/Character[{name}]"); // 1. load the prefab
+                Object prefab = Resources.Load($"Prefabs/CharacterPrefabs/Character[{name}]"); // 1. load the prefab
                 GameObject prefabGameObj = Instantiate(prefab) as GameObject; // 2. Instantiate the prefab as a GameObject
-                prefabGameObj.transform.parent = CharacterPanel; // 3. Set the parent property to be the character panel
+                prefabGameObj.transform.SetParent(CharacterPanel); // 3. Set the parent property to be the character panel
             // TODO implement moving offstage to start
             }
 
@@ -138,6 +141,7 @@ namespace PopKuru
         // TODO Load Background Images as Location class objects rather than a dictionary of references
         void LoadBackgrounds()
         {
+            if (CurrentChapter.BackgroundImagePaths == null) {return;}
             if (CurrentChapter.BackgroundImagePaths.Count == 0) {return;} // Guard Clause
             BackgroundImages = CurrentChapter.BackgroundImagePaths;
         }
