@@ -134,6 +134,9 @@ namespace PopKuru
                 GameObject prefabGameObj = Instantiate(prefab) as GameObject; // 2. Instantiate the prefab as a GameObject
                 prefabGameObj.transform.SetParent(CharacterPanel); // 3. Set the parent property to be the character panel
             // TODO implement moving offstage to start
+
+                
+
             }
 
         }
