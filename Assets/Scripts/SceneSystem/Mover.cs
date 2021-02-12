@@ -9,58 +9,54 @@ namespace PopKuru
         center, right, left, offStage
     }
 
-    public static class Mover
+    public class Mover
     {
-        // stage directions
 
+        // TODO deal with the possibility that the screen may change size during game play.
+        float screenWidth; // TEMP // TODO calculate the width of the screen
 
-        // Take a gameobject and a stage direction
-        // Return new transform params
-        // RectTransform.sizeDelta
-
-
-        public static void MoveTo(RectTransform characterRT, StagePosition newPosition, float amount = 0.5f)
+        // TODO properties to store data from the current canvas
+        public Mover(float screenWidth)
         {
-            Debug.Log(characterRT.sizeDelta);
+            // TODO get the dimensions of the canvas at init
+            this.screenWidth = screenWidth;
+        }
+
+        public void MoveTo(RectTransform RT, StagePosition newPosition, float scale = 0.5f)
+        {
+            Debug.Log("Size delta: " + RT.sizeDelta);
+            Debug.Log("Sprite Width " + RT.sizeDelta);
+            Debug.Log("CP width " + screenWidth);
+            float spriteWidth = RT.sizeDelta.x;
+            float margin = (screenWidth - spriteWidth) / 2;
+            float distance;
             switch (newPosition)
             {
                 // get size delta
                 
                 case StagePosition.offStage:
-                    // TODO set the character rect transform to x = sizeDelta + width of sprite
+                    distance = screenWidth + spriteWidth;
+                    RT.anchoredPosition = new Vector2(distance, 0f);
                     break;
                 case StagePosition.center:
-                    amount = 0f;
-                    // TODO set the character rect transform to x = 0
+                    RT.anchoredPosition = new Vector2(0f, 0f);
+                    scale = 0f;
                     break;
                 case StagePosition.right:
-                    // TODO set the character rect transform to x = sizeDelta - width of sprite * amount
+                    distance = margin * scale;
+                    RT.anchoredPosition = new Vector2(distance, 0f);
                     break;
                 case StagePosition.left:
-                    // TODO set the character rect transform to x = sizeDelta - width of sprite * amount
+                    distance = margin * scale;
+                    RT.anchoredPosition = new Vector2(-distance, 0f);
                     break;
             };
 
+            Debug.Log("anchoredPosition" + RT.anchoredPosition);
 
-            Debug.LogWarning("MoveTo not implemented.");
         }
 
-        /*
-                public RectTransform MoveTo(RectTransform rT, StagePosition position, float amount = 0.5f)
-        {
-            Debug.LogWarning("Generic MoveTo Not implemented");
+        // Overloads for moving objects that don't have recttransforms
 
-            return rT;
-        }
-
-        // Overload for moving a character, specifically
-        public RectTransform MoveTo(Character character, StagePosition position, float amount = 0.5f)
-        {
-            RectTransform rT = character.RT;
-            float deltaX = rT.sizeDelta.x;
-
-            return rT;
-        }
-        */
     }
 }

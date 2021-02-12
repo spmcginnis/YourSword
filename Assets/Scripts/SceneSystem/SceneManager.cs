@@ -26,6 +26,9 @@ namespace PopKuru
         // Unity Game Objects
         public RectTransform CharacterPanel {get; private set;}
 
+        // Mover // TODO put mover on game controller (?)
+        private Mover Mover;
+
         void Awake()
         {
             Menus = GameObject.FindGameObjectsWithTag(menu);
@@ -37,6 +40,12 @@ namespace PopKuru
             // Initialize the CurrentScene based on the gamestate 
             string GameStatePlaceholder = "StandardScene";
             
+            // Initialize the mover // TODO use it to get the bounds of the screen
+            
+            Mover = new Mover((float) CharacterPanel.rect.width);
+            
+
+
             switch (GameStatePlaceholder)
             {
                 case "StandardScene":
@@ -109,36 +118,28 @@ namespace PopKuru
             }
         }
 
-        // Load character prefabs for the scene, off stage.
         void LoadCharacters()
         {
             if (CurrentChapter.CastOfCharacters.Count == 0) {return;} // Guard Clause
-
             Characters = new List<Character>();
+            // TODO change the input type from generic string to controlled vocabulary
             foreach (string name in CurrentChapter.CastOfCharacters)
             {
                 Character toAdd = new Character(name);
                 Characters.Add(toAdd);
             }
         }
-        
-        // TODO Load Character Prefabs offscreen // TODO change the input type from generic string to controlled vocabulary
-        void LoadCharacterPrefabs()
+                
+        void LoadCharacterPrefabs() // attach the prefab to the character panel
         {
- 
-            // attach the prefab to the character panel
-
             foreach (string name in CurrentChapter.CastOfCharacters)
             {
                 Object prefab = Resources.Load($"Prefabs/CharacterPrefabs/Character[{name}]"); // 1. load the prefab
                 GameObject prefabGameObj = Instantiate(prefab) as GameObject; // 2. Instantiate the prefab as a GameObject
                 prefabGameObj.transform.SetParent(CharacterPanel); // 3. Set the parent property to be the character panel
-            // TODO implement moving offstage to start
-
-                
-
+                RectTransform RT = prefabGameObj.GetComponent<RectTransform>();
+                Mover.MoveTo(RT, StagePosition.offStage); // move offstage to start
             }
-
         }
 
         // TODO Load Background Images as Location class objects rather than a dictionary of references
