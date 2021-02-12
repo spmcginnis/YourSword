@@ -42,7 +42,7 @@ namespace PopKuru
         public List<string> CastOfCharacters;
 
 
-        public static string LastSpeaker = "test";
+        public static string LastSpeaker = "";
         public class Line
         {
             public string Speaker {get; protected set;}

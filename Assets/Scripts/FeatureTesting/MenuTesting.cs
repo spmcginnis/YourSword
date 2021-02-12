@@ -6,27 +6,27 @@ namespace PopKuru
 {
     public class MenuTesting : MonoBehaviour
     {
+        GameObject Managers;
         SceneManager SceneManager;
+        GamePlayManager GP;
 
         void Awake() {
-            SceneManager = GameObject.Find("SceneManager").GetComponent<SceneManager>();
+            Managers = GameObject.Find("Managers");
+            SceneManager = Managers.GetComponent<SceneManager>();
+            GP = Managers.GetComponent<GamePlayManager>();
         }
-
-
-
 
         // Testing the Show/Hide Menu
         void Start()
         {
-            SceneManager.ShowMenu();
+            GP.ShowMenu();
         }
         void Update()
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                SceneManager.ShowMenu();
+                GP.ShowMenu();
             }
         }
-
     }
 }

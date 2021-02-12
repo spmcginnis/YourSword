@@ -607,7 +607,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 897848200}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdbc76253d476fc4093c314f143e606e, type: 3}
   m_Name: 
@@ -2252,7 +2252,7 @@ PrefabInstance:
     - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1865493055}
+      objectReference: {fileID: 1865493056}
     - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -2263,7 +2263,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PopKuru.SceneManager, Assembly-CSharp
+      value: PopKuru.GamePlayManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4336171285174298552, guid: c12111b59801e474fa66b66714cff367, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -2548,8 +2548,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1865493054}
   - component: {fileID: 1865493055}
+  - component: {fileID: 1865493056}
   m_Layer: 0
-  m_Name: SceneManager
+  m_Name: Managers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2579,6 +2580,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5383fac7717917d468faec936a4d54f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1865493056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865493053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f9d1f30482b6b049876b6370eb811cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2012040660

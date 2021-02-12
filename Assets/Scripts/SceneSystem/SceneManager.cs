@@ -10,10 +10,6 @@ namespace PopKuru
         public Scene CurrentScene;
         //TODO Expose the necessary data from CurrentScene to Unity
 
-        // Cashe the menu object
-        GameObject[] Menus;
-        const string menu = "Menu";
-
         // Cashe the ScreenPlay object
         ScreenPlay CurrentChapter;
         
@@ -31,21 +27,16 @@ namespace PopKuru
 
         void Awake()
         {
-            Menus = GameObject.FindGameObjectsWithTag(menu);
+
             CharacterPanel = GameObject.Find("CharacterPanel").GetComponent<RectTransform>();
             
-            // TODO Get the chapter from game state
-            CurrentChapter = new SampleScreenPlay(); 
+            // TODO Change to get the chapter from game state
+            CurrentChapter = new SampleScreenPlay(); // TEMP
             
-            // Initialize the CurrentScene based on the gamestate 
+            // Initialize the CurrentScene based on the gamestate
+            // This will determine what components are loaded into the hierarchy
+            // Also has ramifications for menu options 
             string GameStatePlaceholder = "StandardScene";
-            
-            // Initialize the mover // TODO use it to get the bounds of the screen
-            
-            Mover = new Mover((float) CharacterPanel.rect.width);
-            
-
-
             switch (GameStatePlaceholder)
             {
                 case "StandardScene":
@@ -69,54 +60,19 @@ namespace PopKuru
 
         void Start()
         {
-
+            Mover = new Mover((float) CharacterPanel.rect.width);
+            // LoadBackgrounds(); // Don't show them yet.  Show/hide should be handled by GamePlayManager.
             LoadCharacters();
-
             LoadCharacterPrefabs();
-
-            // Once the prefabs are loaded, can set transform
-            // moveto offstage
-
-            // LoadBackgrounds();
-            // LoadCutScenes(); // If cutscenes are part of standardscene // cutscene and special cutscene?
-
+            // LoadCutScenes(); // If cutscenes are part of standardscene // cutscene and special cutscene? cutscene and cinematic?
         }
 
         void Update()
         {
-            if (CurrentScene == null) {return;}
-            if (CurrentScene.IsDone) { LoadNext(CurrentScene.NextScene); }
+
         }
 
 
-        // Transition to the next scene
-        public IEnumerator LoadNext(Scene nextScene){
-            SaveGame();
-            yield break;
-        }
-
-        //TODO put this in SaveLoadManager or GameState (?)
-        public IEnumerator SaveGame(){
-            yield break;
-        }
-
-        // Show and hide menu
-        public void ShowMenu(string name="test") // TODO string param currently not used
-        {
-            if ( Menus.Length==0 || Menus[0] == null ) { return; } // Will this be the case if it finds null?
-            foreach (GameObject item in Menus)
-            {
-                item.GetComponent<Canvas>().sortingOrder = 1;
-            }
-        }
-        public void HideMenu(string name="test")
-        {
-            if ( Menus.Length==0 || Menus[0] == null ) { return; }
-            foreach (GameObject item in Menus)
-            {
-                item.GetComponent<Canvas>().sortingOrder = -1;
-            }
-        }
 
         void LoadCharacters()
         {
