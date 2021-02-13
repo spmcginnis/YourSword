@@ -31,15 +31,16 @@ namespace PopKuru
 
         ScreenPlay CurrentChapter;
 
-        public void SetUp(ScreenPlay currentChapter)
+        public void SetUp(ScreenPlay currentChapter, RectTransform characterPanel)
         {
             CurrentChapter = currentChapter;
-            CharacterPanel = GameObject.Find("CharacterPanel").GetComponent<RectTransform>(); 
+            CharacterPanel = characterPanel; 
             Mover = new Mover((float) CharacterPanel.rect.width);
             // LoadBackgrounds(); // Don't show them yet.  Show/hide should be handled by GamePlayManager.
             LoadCharacters();
             LoadCharacterPrefabs();
             // LoadCutScenes(); // If cutscenes are part of standardscene // cutscene and special cutscene? cutscene and cinematic?
+            // Destroy Mover when setup is complete.
         }
 
         void LoadCharacters()

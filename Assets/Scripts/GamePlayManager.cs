@@ -11,8 +11,6 @@ namespace PopKuru
         // background changes
         // text display
         // menu interactions
-    
-    // Should these inherit from gamestate???
 
     public class GamePlayManager : MonoBehaviour
     {
@@ -28,15 +26,18 @@ namespace PopKuru
 
         ScreenPlay CurrentChapter;
         List<ScreenPlay> NextChapterChoices;
-
         SceneManager SceneManager;
-
+        TextManager TextManager;
+        int LineNumber;
+        
         void Awake()
         {
             CharacterPanel = GameObject.Find("CharacterPanel").GetComponent<RectTransform>();
             Menus = GameObject.FindGameObjectsWithTag(menu);
+            SceneManager = GameObject.Find("Managers").GetComponent<SceneManager>();
 
-            // TODO implement GoNextChapter();
+            // TODO Instantiate Text Manager
+            TextManager = new TextManager();
             CurrentChapter = new SampleScreenPlay(); // TEMP // TODO get the information from gamestate
             NextChapterChoices = new List<ScreenPlay>()
             {
@@ -47,17 +48,27 @@ namespace PopKuru
 
         void Start() 
         {
-            SceneManager = GameObject.Find("Managers").GetComponent<SceneManager>();
-            SceneManager.SetUp(CurrentChapter);
+            SceneManager.SetUp(CurrentChapter, CharacterPanel);
         }
 
         void Update()
         {
+            if (LineNumber >= CurrentChapter.Text.Count)
+            {
+                //TODO signal the end of the chapter and call GoNextChapter();
+            }
             // User input
 
             // Check for changes to the game state
 
-            // Behavior for moving to the next chapter
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                // TODO Call text manager on the current line
+                TextManager.ReadLine(CurrentChapter.Text[LineNumber]);
+
+                // TODO Implement an image manager // TODO implement a command class
+                // ImageManager.ProcessCommand(Command command)
+            }
         }
 
         // Transition to the next scene // Changes scene type
