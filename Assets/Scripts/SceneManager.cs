@@ -5,13 +5,17 @@ using UnityEngine.SceneManagement;
 
 namespace PopKuru
 {
+    // Called by GPM to set a scene:
+        // Scene type
+        // Characters
+        // Backgrounds
+        // Menu type // TODO create menu prefabs to load just like character prefabs
+        // Prefabs
+        
     public class SceneManager : MonoBehaviour
     {
-        public Scene CurrentScene;
+        Scene CurrentScene;
         //TODO Expose the necessary data from CurrentScene to Unity
-
-        // Cashe the ScreenPlay object
-        ScreenPlay CurrentChapter;
         
         // Cashe the character objects for the scene.
         public List<Character> Characters {get; private set; }
@@ -19,60 +23,24 @@ namespace PopKuru
         // Cashe the BackgroundImageLocations for the scene. //TODO Change to a list of location objects
         public Dictionary<string, string> BackgroundImages {get; private set; }
 
-        // Unity Game Objects
-        public RectTransform CharacterPanel {get; private set;}
+        // // Unity Game Objects
+        RectTransform CharacterPanel;
 
-        // Mover // TODO put mover on game controller (?)
-        private Mover Mover;
+        // Mover // TODO refactor as an interface (?)
+        Mover Mover;
 
-        void Awake()
+        ScreenPlay CurrentChapter;
+
+        public void SetUp(ScreenPlay currentChapter)
         {
-
-            CharacterPanel = GameObject.Find("CharacterPanel").GetComponent<RectTransform>();
-            
-            // TODO Change to get the chapter from game state
-            CurrentChapter = new SampleScreenPlay(); // TEMP
-            
-            // Initialize the CurrentScene based on the gamestate
-            // This will determine what components are loaded into the hierarchy
-            // Also has ramifications for menu options 
-            string GameStatePlaceholder = "StandardScene";
-            switch (GameStatePlaceholder)
-            {
-                case "StandardScene":
-                    CurrentScene = new StandardScene();
-                    break;
-                case "CutScene":
-                    CurrentScene = new CutScene();
-                    break;
-                case "Intro":
-                    CurrentScene = new CutScene(isIntro:true);
-                    break;
-                case "Ending":
-                    CurrentScene = new CutScene(isEnding:true);
-                    break;
-                default:
-                    Debug.Log("GameState switch-case: No match was detected; defaulted to Standard.");
-                    CurrentScene = new StandardScene();
-                    break;
-            }
-        }
-
-        void Start()
-        {
+            CurrentChapter = currentChapter;
+            CharacterPanel = GameObject.Find("CharacterPanel").GetComponent<RectTransform>(); 
             Mover = new Mover((float) CharacterPanel.rect.width);
             // LoadBackgrounds(); // Don't show them yet.  Show/hide should be handled by GamePlayManager.
             LoadCharacters();
             LoadCharacterPrefabs();
             // LoadCutScenes(); // If cutscenes are part of standardscene // cutscene and special cutscene? cutscene and cinematic?
         }
-
-        void Update()
-        {
-
-        }
-
-
 
         void LoadCharacters()
         {
@@ -106,7 +74,28 @@ namespace PopKuru
             BackgroundImages = CurrentChapter.BackgroundImagePaths;
         }
 
-        // Call image transition from (where?) // Call music transition from (where?) // No.  Transitions will be called by the game manager.
-        
+        void SetSceneType()
+        {
+            string GameStatePlaceholder = "StandardScene";
+            switch (GameStatePlaceholder)
+            {
+                case "StandardScene":
+                    CurrentScene = new StandardScene();
+                    break;
+                case "CutScene":
+                    CurrentScene = new CutScene();
+                    break;
+                case "Intro":
+                    CurrentScene = new CutScene(isIntro:true);
+                    break;
+                case "Ending":
+                    CurrentScene = new CutScene(isEnding:true);
+                    break;
+                default:
+                    Debug.Log("GameState switch-case: No match was detected; defaulted to Standard.");
+                    CurrentScene = new StandardScene();
+                    break;
+            }
+        }
     }
 }
