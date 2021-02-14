@@ -4,6 +4,7 @@ using UnityEngine;
 using static PopKuru.CharName;
 using static PopKuru.CommandName;
 using static PopKuru.Expression;
+using static PopKuru.StagePosition;
 
 namespace PopKuru
 {
@@ -26,8 +27,8 @@ namespace PopKuru
                     commands: new List<Command>()
                     {
                         new Command(changeBackground, "GuildInterviewBG"),
-                        new Command(enter, margot),
-                        new Command(enter, jin)
+                        new Command(enter, margot, right),
+                        new Command(enter, jin, left)
                     }
                 )},
                 {new Line(
@@ -222,7 +223,8 @@ namespace PopKuru
                 )},
                 {new Line(
                     commands: new Command(appendText),
-                    storyText: "... of course, you’re not. "                )},
+                    storyText: "... of course, you’re not. "                
+                )},
                 {new Line(
                     speaker:jin,
                     storyText: "I have no idea what you mean by that."
@@ -244,8 +246,14 @@ namespace PopKuru
                     storyText: "I’m sure. I’ll make your file, and you should be cleared to start tomorrow, if you wish. "
                 )},
                 {new Line(
-                    commands: new Command(changeBackground, "MCinGuild"), // TEMP
-                    speaker:none                )},
+                    commands: new List<Command>()
+                    {
+                        new Command(changeBackground, "MCinGuild"),
+                        new Command(exit, margot, offStage),
+                        new Command(exit, jin, offStage)
+                    }, // TEMP
+                    speaker:none                
+                )},
                 {new Line(
                     speaker:margot,
                     storyText: "Hello, there, Mr. Jin. Something on your mind?"
@@ -275,7 +283,8 @@ namespace PopKuru
                 )},
                 {new Line(
                     commands: new Command(changeBackground, "GuildInterviewBG"),
-                    speaker:none                )},
+                    speaker:none
+                )},
                 {new Line(
                     speaker:margot,
                     storyText: "She’s about like you, I’d imagine. Well, not quite like you. But you know. A mysterious pain-in-the-butt."

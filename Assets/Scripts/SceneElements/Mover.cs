@@ -4,10 +4,7 @@ using UnityEngine;
 
 namespace PopKuru
 {
-    public enum StagePosition
-    {
-        center, right, left, offStage
-    }
+
 
     public class Mover
     {

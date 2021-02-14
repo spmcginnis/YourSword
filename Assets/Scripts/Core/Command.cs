@@ -13,7 +13,9 @@ namespace PopKuru
         public CharName Character {get; private set;}
         public string ImageName {get; private set;} // TEMP // TODO background image classes
         public List<string> Args {get; private set;}
-        public Expression Expression;
+        public Expression Expression {get; private set;}
+        public StagePosition Position {get; private set;}
+
         // Constructor for characters
         public Command (CommandName name, CharName character, List<string> args = null)
         {
@@ -29,7 +31,13 @@ namespace PopKuru
             Character = character;
             Expression = expression;
         }
-
+        // Constructor for stage directions
+        public Command (CommandName name, CharName character, StagePosition position)
+        {
+            Name = name;
+            Character = character;
+            Position = position;
+        }
 
         // Constructor for images
         public Command (CommandName name, string imageName, List<string> args = null)
