@@ -6,7 +6,7 @@ namespace PopKuru
 {
     public class Character
     {
-        public string Name { get; private set; }
+        public CharName Name { get; private set; }
                
         public List<ImageSet> ImageSetList = new List<ImageSet>();
 
@@ -14,13 +14,13 @@ namespace PopKuru
 
         public RectTransform RT {get; set;}
 
-        public Character(string name)
+        public Character(CharName name)
         {
             // Initialize Name
             this.Name = name;
 
             // Initialize Image Index for that name
-            ImageSetList = ImageSet.InitializeImageSets(name);
+            ImageSetList = ImageSet.InitializeImageSets(name.ToString("g"));
 
 
         }

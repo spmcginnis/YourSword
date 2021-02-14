@@ -48,7 +48,7 @@ namespace PopKuru
             if (CurrentChapter.CastOfCharacters.Count == 0) {return;} // Guard Clause
             Characters = new List<Character>();
             // TODO change the input type from generic string to controlled vocabulary
-            foreach (string name in CurrentChapter.CastOfCharacters)
+            foreach (CharName name in CurrentChapter.CastOfCharacters)
             {
                 Character toAdd = new Character(name);
                 Characters.Add(toAdd);

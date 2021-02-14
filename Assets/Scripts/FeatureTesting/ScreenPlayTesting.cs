@@ -46,12 +46,12 @@ namespace PopKuru
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 if (Index >= CurrentChapter.Text.Count) { Index = 0; }
-                string speakerName = CurrentChapter.Text[Index].Speaker;
+                string speakerName = CurrentChapter.Text[Index].Speaker.ToString("g");
                 string storyText = CurrentChapter.Text[Index].StoryText;
-                string commandString = string.Join(" ", CurrentChapter.Text[Index].Commands.ToArray());
+                string commandString = "Command parsing not implemented."; // TEMP
                 
                 print(
-                    $"{speakerName}: {storyText} (With commands: {commandString})" // TEMP
+                    $"{speakerName}: {storyText} ({commandString})" // TEMP
                 );
 
                 SpeakerNameText.text = (speakerName != null)? speakerName : " ";
