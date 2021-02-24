@@ -7,7 +7,7 @@ namespace PopKuru
     public class TextManager
     {   
         // Process Text and Text related commands
-        public void ReadLine(ScreenPlay.Line line)
+        public void ReadLine(Line line)
         {
             Debug.LogWarning("Text Manager not implemented.");
         }
