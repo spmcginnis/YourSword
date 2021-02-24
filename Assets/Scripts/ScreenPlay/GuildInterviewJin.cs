@@ -34,7 +34,7 @@ namespace PopKuru
                 {new Line(
                     new Command(changeExpression, margot, pleasant),
                     speaker: margot,
-                    "Oh, sorry...you’re the one who wanted to apply for guild membership today, aren’t you? I wasn’t expecting you for a while."
+                    storyText: "Oh, sorry...you’re the one who wanted to apply for guild membership today, aren’t you? I wasn’t expecting you for a while."
                     
                 )}, 
                 {new Line(
@@ -248,11 +248,10 @@ namespace PopKuru
                 {new Line(
                     commands: new List<Command>()
                     {
-                        new Command(changeBackground, "MCinGuild"),
+                        new Command(changeBackground, "MCinGuild"), // TEMP   
                         new Command(exit, margot, offStage),
                         new Command(exit, jin, offStage)
-                    }, // TEMP
-                    speaker:none                
+                    }            
                 )},
                 {new Line(
                     speaker:margot,
@@ -282,8 +281,12 @@ namespace PopKuru
                     storyText: "[CutScene: MC turns and looks toward them, her eyes still obscured. She smiles without her teeth.]"
                 )},
                 {new Line(
-                    commands: new Command(changeBackground, "GuildInterviewBG"),
-                    speaker:none
+                    commands: new List<Command>()
+                    {
+                        new Command(changeBackground, "GuildInterviewBG"), // TEMP   
+                        new Command(enter, margot, right),
+                        new Command(enter, jin, left)
+                    }            
                 )},
                 {new Line(
                     speaker:margot,

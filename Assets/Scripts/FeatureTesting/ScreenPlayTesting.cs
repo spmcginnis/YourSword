@@ -11,22 +11,31 @@ namespace PopKuru
         ScreenPlay CurrentChapter;
         int Index; 
 
-        TextMeshProUGUI SpeakerNameText;
-        TextMeshProUGUI StoryText;
+        TextMeshProUGUI SpeakerNameTextBox;
+        TextMeshProUGUI StoryTextBox;
         List<BackgroundImage> Backgrounds;
 
         GameObject BackgroundPanel;
         Image BPImageHook;
 
+        string SpeakerName;
+        string StoryText;
+        List<Command> Commands;
+        CharName CurrentSpeaker;
+        CharName LastSpeaker;
+        string CommandString; 
+
         void Awake()
         {
-            SpeakerNameText = GameObject.Find("SpeakerNameText").GetComponent<TextMeshProUGUI>();
-            StoryText = GameObject.Find("StoryText").GetComponent<TextMeshProUGUI>();
+            SpeakerNameTextBox = GameObject.Find("SpeakerNameText").GetComponent<TextMeshProUGUI>();
+            StoryTextBox = GameObject.Find("StoryText").GetComponent<TextMeshProUGUI>();
 
             Backgrounds = new List<BackgroundImage>();
 
             BackgroundPanel = GameObject.Find("BackgroundPanel").transform.Find("Image").gameObject;
             BPImageHook = BackgroundPanel.GetComponent<Image>();
+            
+            LastSpeaker = CharName.none;
         }
 
         void Start()
@@ -45,20 +54,44 @@ namespace PopKuru
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                if (Index >= CurrentChapter.Text.Count) { Index = 0; }
-                string speakerName = CurrentChapter.Text[Index].Speaker.ToString("g");
-                string storyText = CurrentChapter.Text[Index].StoryText;
-                string commandString = "Command parsing not implemented."; // TEMP
+                if (Index >= CurrentChapter.Text.Count) { Index = 0; } // TEMP // Resets the index at the end for testing purposes.
+                
+                // Text Handling
+                CurrentSpeaker = CurrentChapter.Text[Index].Speaker;
+
+                if (CurrentSpeaker == null || CurrentSpeaker == CharName.none)
+                {
+                    SpeakerName = LastSpeaker.ToString("g");
+                }
+                else
+                {
+                    LastSpeaker = CurrentSpeaker;
+                    SpeakerName = CurrentSpeaker.ToString("g");
+                }
+
+                StoryText = CurrentChapter.Text[Index].StoryText;
+
+                SpeakerNameTextBox.text = (StoryText != null) ? SpeakerName : " ";
+                StoryTextBox.text = (StoryText != null) ? StoryText : " ";
+
+                // Command Handling
+                Commands = CurrentChapter.Text[Index].Commands;
+
+                if (Commands != null)
+                {
+                    CommandString = "";
+                    foreach (Command command in Commands)
+                    {
+                        CommandString += command.ToString();
+                    }
+
+                }
                 
                 print(
-                    $"{speakerName}: {storyText} ({commandString})" // TEMP
+                    $"Index:{Index} {SpeakerName}: {StoryText} {(CommandString!=""?"("+CommandString+")":"")}" // TEMP
                 );
-
-                SpeakerNameText.text = (speakerName != null)? speakerName : " ";
-                StoryText.text = (storyText != null)? storyText : " ";
-
+                print("storytext: " + StoryText);
                 Index++;
-
             }
 
             if (Input.GetKeyDown(KeyCode.I))

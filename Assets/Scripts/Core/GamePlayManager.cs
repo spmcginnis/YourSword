@@ -60,11 +60,12 @@ namespace PopKuru
             // User input
 
             // Check for changes to the game state
-
+            
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                
                 // TODO Call text manager on the current line
-                TextManager.ReadLine(CurrentChapter.Text[LineNumber]);
+                // TextManager.ReadLine(CurrentChapter.Text[LineNumber]);
 
                 // TODO Implement an image manager // TODO implement a command class
                 // ImageManager.ProcessCommand(Command command)

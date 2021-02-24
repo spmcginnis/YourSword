@@ -11,6 +11,8 @@ namespace PopKuru
         {
             Debug.LogWarning("Text Manager not implemented.");
         }
-    }
 
+        // TODO Find last speaker
+        // TODO Process text and speaker
+    }
 }
