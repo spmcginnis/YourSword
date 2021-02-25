@@ -4,6 +4,7 @@ using UnityEngine;
 using static PopKuru.CharName;
 using static PopKuru.CommandName;
 using static PopKuru.Expression;
+using static PopKuru.StagePosition;
 
 namespace PopKuru
 {
@@ -14,16 +15,16 @@ namespace PopKuru
             this.Title = "Sample ScreenPlay for Testing";
             this.CastOfCharacters = new List<CharName>()
             {
-                margot, jin
+                margot
             };
 
             this.Text = new List<Line>()
             {
                 new Line
                 (
-                    new Command(changeExpression, margot, pleasant),
+                    new Command(enter, margot, center),
                     speaker: margot,
-                    "Oh, sorry...you’re the one who wanted to apply for guild membership today, aren’t you? I wasn’t expecting you for a while."
+                    "Oh, it appears I'm all by my lonesome..."
                 )
                 
             };

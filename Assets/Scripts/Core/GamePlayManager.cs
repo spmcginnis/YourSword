@@ -1,60 +1,74 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 namespace PopKuru
 {
-    //uses the info from gamestate to control the flow of a scene:
-        // user input
-        // character movement
-        // image transitions
-        // background changes
-        // text display
-        // menu interactions
-
     public class GamePlayManager : MonoBehaviour
     {
+        // Managers
+        SceneManager SceneManager;
+        TextManager TextManager; // Not yet implemented
+
         // Cashe the menu object
         GameObject[] Menus;
         const string menu = "Menu"; // TODO refactor menus to use prefab system like characters
 
-        // // Unity Game Objects
-        RectTransform CharacterPanel;
+        // Text Boxes
+        TextMeshProUGUI SpeakerNameTextBox;
+        TextMeshProUGUI StoryTextBox;
+
+        // Characters
+        List<Character> Characters;
 
         // Mover
         Mover Mover;
 
+        // TEMP
+        List<ScreenPlay> NextChapterChoices; // TODO offload to gamestate
+        
+        // ScreenPlay
         ScreenPlay CurrentChapter;
-        List<ScreenPlay> NextChapterChoices;
-        SceneManager SceneManager;
-        TextManager TextManager;
+        Line CurrentLine;
         int LineNumber;
         
+        // Dialogue and Command Handling
+        string SpeakerName;
+        string StoryText;
+        List<Command> Commands;
+        CharName CurrentSpeaker;
+        CharName LastSpeaker;
+        string CommandString;
+
         void Awake()
         {
-            CharacterPanel = GameObject.Find("CharacterPanel").GetComponent<RectTransform>();
             Menus = GameObject.FindGameObjectsWithTag(menu);
             SceneManager = GameObject.Find("Managers").GetComponent<SceneManager>();
 
             // TODO Instantiate Text Manager
             TextManager = new TextManager();
-            CurrentChapter = new SampleScreenPlay(); // TEMP // TODO get the information from gamestate
-            NextChapterChoices = new List<ScreenPlay>()
+            CurrentChapter = new GuildInterviewJin(); // TEMP // TODO get the information from gamestate
+            NextChapterChoices = new List<ScreenPlay>() // TEMP // TODO get the information from gamestate
             {
               {new GuildInterviewJin()}  
             };
-
+            SceneManager.SetUp(CurrentChapter);
+            Characters = SceneManager.Characters;
+            Mover = new Mover((float) Screen.width);
         }
 
         void Start() 
         {
-            SceneManager.SetUp(CurrentChapter, CharacterPanel);
+            
         }
 
         void Update()
         {
             if (LineNumber >= CurrentChapter.Text.Count)
             {
+                return;
                 //TODO signal the end of the chapter and call GoNextChapter();
             }
             // User input
@@ -63,12 +77,37 @@ namespace PopKuru
             
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                
+                CurrentLine = CurrentChapter.Text[LineNumber];
                 // TODO Call text manager on the current line
                 // TextManager.ReadLine(CurrentChapter.Text[LineNumber]);
 
-                // TODO Implement an image manager // TODO implement a command class
+                // TODO Implement an image manager 
                 // ImageManager.ProcessCommand(Command command)
+
+                // TODO Handle commands // TODO implement a command manager
+                // CommandManager.Process(CurrentChapter.Text[LineNumber]);
+                foreach (Command command in CurrentLine.Commands)
+                {
+                    Debug.Log(command.ToString());
+                    if (command.CommandName == CommandName.enter)
+                    {
+                        print("Command " + command.CommandName);
+
+                        foreach (Character character in Characters)
+                        {
+                            if (command.Character == character.Name)
+                            {
+                                Mover.MoveTo(character.RT, command.Position);
+                            }
+                            
+                        }
+                    }
+                }
+
+                
+
+                // Advance the line number
+                LineNumber++;
             }
         }
 

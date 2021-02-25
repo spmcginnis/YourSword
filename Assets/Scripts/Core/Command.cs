@@ -7,9 +7,9 @@ using static PopKuru.Expression;
 
 namespace PopKuru
 {
-    public class Command
+    public class Command // TODO refactor this into an interface?
     {
-        public CommandName Name {get; private set;}
+        public CommandName CommandName {get; private set;}
         public CharName Character {get; private set;}
         public string ImageName {get; private set;} // TEMP // TODO background image classes
         public Expression Expression {get; private set;}
@@ -19,7 +19,7 @@ namespace PopKuru
         // Constructor for characters
         public Command (CommandName name, CharName character, List<string> args = null)
         {
-            Name = name;
+            CommandName = name;
             Character = character;
             Args = args;
         }
@@ -27,14 +27,14 @@ namespace PopKuru
         // Constructor for expression changes, end chapter etc.
         public Command (CommandName name, CharName character, Expression expression)
         {
-            Name = name;
+            CommandName = name;
             Character = character;
             Expression = expression;
         }
         // Constructor for stage directions
         public Command (CommandName name, CharName character, StagePosition position)
         {
-            Name = name;
+            CommandName = name;
             Character = character;
             Position = position;
         }
@@ -42,7 +42,7 @@ namespace PopKuru
         // Constructor for images
         public Command (CommandName name, string imageName, List<string> args = null)
         {
-            Name = name;
+            CommandName = name;
             ImageName = imageName;
             Args = args;
         }
@@ -50,13 +50,13 @@ namespace PopKuru
         // Constructor for scene changes e.g. small cutscene, end chapter etc.
         public Command (CommandName name, List<string> args = null)
         {
-            Name = name;
+            CommandName = name;
             Args = args;
         }
 
         public override string ToString()
         {
-            return $"CommandName: {(Name!=null? Name.ToString(): "")}, CharName {(Character!=null? Character.ToString(): "") }, ImageName: {(ImageName!=null? ImageName : "")}, Expression: {(Expression!=null? Expression.ToString(): "")}, StagePosition: {(Position!=null? Position.ToString():"")}, Args: {(Args!=null? Args.ToString():"")}" ;
+            return $"CommandName: {(CommandName!=null? CommandName.ToString(): "")}, CharName {(Character!=null? Character.ToString(): "") }, ImageName: {(ImageName!=null? ImageName : "")}, Expression: {(Expression!=null? Expression.ToString(): "")}, StagePosition: {(Position!=null? Position.ToString():"")}, Args: {(Args!=null? Args.ToString():"")}" ;
         }
     }
 }

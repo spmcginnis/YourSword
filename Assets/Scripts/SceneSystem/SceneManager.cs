@@ -4,20 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace PopKuru
-{
-    // Called by GPM to set a scene:
-        // Scene type
-        // Characters
-        // Backgrounds
-        // Menu type // TODO create menu prefabs to load just like character prefabs
-        // Prefabs
-        
+{     
     public class SceneManager : MonoBehaviour
     {
-        Scene CurrentScene;
+        Scene CurrentScene; // NOT USED RIGHT NOW
         //TODO Expose the necessary data from CurrentScene to Unity
         
-        // Cashe the character objects for the scene.
+        // Cashe the character objects for the scene.  The Character object has a rect transform property.
         public List<Character> Characters {get; private set; }
 
         // Cashe the BackgroundImageLocations for the scene. //TODO Change to a list of location objects
@@ -31,11 +24,18 @@ namespace PopKuru
 
         ScreenPlay CurrentChapter;
 
-        public void SetUp(ScreenPlay currentChapter, RectTransform characterPanel)
+        void Awake()
+        {
+            Characters = new List<Character>(); // Is this necessary?
+            CurrentChapter = null;
+            CharacterPanel = GameObject.Find("CharacterPanel").GetComponent<RectTransform>(); 
+        }
+
+        public void SetUp(ScreenPlay currentChapter)
         {
             CurrentChapter = currentChapter;
-            CharacterPanel = characterPanel; 
-            Mover = new Mover((float) CharacterPanel.rect.width);
+            
+            Mover = new Mover((float) Screen.width);
             // LoadBackgrounds(); // Don't show them yet.  Show/hide should be handled by GamePlayManager.
             LoadCharacters();
             LoadCharacterPrefabs();
