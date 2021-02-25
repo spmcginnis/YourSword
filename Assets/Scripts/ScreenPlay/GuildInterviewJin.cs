@@ -13,9 +13,9 @@ namespace PopKuru
         public GuildInterviewJin()
         {
             this.Title = "Guild Interview with Jin.";   
-            this.BackgroundImagePaths = new Dictionary<string, string>() // TODO move this to background image related classes.  
+            this.Backgrounds = new List<BackgroundName>() // TODO move this to background image related classes.  
             {
-                {"TestBackgroundName", "TestBackgroundURL"} //TEMP
+                guildHall1, guildHall2
             };
             this.CastOfCharacters = new List<CharName>() {
                 margot, jin

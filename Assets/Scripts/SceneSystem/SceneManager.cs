@@ -67,12 +67,10 @@ namespace PopKuru
             }
         }
 
-        // TODO Load Background Images as Location class objects rather than a dictionary of references
+        // TODO Load Background Images
         void LoadBackgrounds()
         {
-            if (CurrentChapter.BackgroundImagePaths == null) {return;}
-            if (CurrentChapter.BackgroundImagePaths.Count == 0) {return;} // Guard Clause
-            BackgroundImages = CurrentChapter.BackgroundImagePaths;
+            Debug.LogWarning("LoadBackgrounds() not implemented.");
         }
 
         void SetSceneType()
