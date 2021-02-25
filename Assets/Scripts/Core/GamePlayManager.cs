@@ -97,8 +97,9 @@ namespace PopKuru
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 CurrentLine = CurrentChapter.Text[LineNumber];
-                // TODO Call text manager on the current line
-                // TextManager.ReadLine(CurrentChapter.Text[LineNumber]);
+                
+                // Call text manager on the current line
+                TextManager.ReadLine(CurrentLine);
 
                 // TODO Implement an image manager 
                 // ImageManager.ProcessCommand(Command command)
