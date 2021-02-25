@@ -42,13 +42,15 @@ namespace PopKuru
         CharName LastSpeaker;
         string CommandString;
 
+        int ScreenWidth;
+
         void Awake()
         {
+            // TODO Menus
             Menus = GameObject.FindGameObjectsWithTag(menu);
-            SceneManager = GameObject.Find("Managers").GetComponent<SceneManager>();
 
-            // TODO Instantiate Text Manager
-            TextManager = new TextManager();
+            // Instantiate the Scene Manager
+            SceneManager = GameObject.Find("Managers").GetComponent<SceneManager>();
             CurrentChapter = new GuildInterviewJin(); // TEMP // TODO get the information from gamestate
             NextChapterChoices = new List<ScreenPlay>() // TEMP // TODO get the information from gamestate
             {
@@ -56,7 +58,15 @@ namespace PopKuru
             };
             SceneManager.SetUp(CurrentChapter);
             Characters = SceneManager.Characters;
-            Mover = new Mover((float) Screen.width);
+
+            // Instantiate the Mover
+            ScreenWidth = Screen.width;
+            Mover = new Mover((float) ScreenWidth);
+
+            // Instantiate Text Manager
+            SpeakerNameTextBox = GameObject.Find("SpeakerNameText").GetComponent<TextMeshProUGUI>();
+            StoryTextBox = GameObject.Find("StoryText").GetComponent<TextMeshProUGUI>();
+            TextManager = new TextManager(SpeakerNameTextBox, StoryTextBox);
         }
 
         void Start() 
@@ -71,10 +81,19 @@ namespace PopKuru
                 return;
                 //TODO signal the end of the chapter and call GoNextChapter();
             }
-            // User input
+            
+            // Check for changes to the window
+            if (Screen.width !=  ScreenWidth)
+            {
+                ScreenWidth = Screen.width;
+                Mover.ReSize((float) ScreenWidth);
+                Debug.Log("ScreenWidth recalibrated to " + ScreenWidth);
+                // TODO reposition characters based on the changed screen width
+            }
 
             // Check for changes to the game state
-            
+
+            // User input
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 CurrentLine = CurrentChapter.Text[LineNumber];
@@ -84,12 +103,11 @@ namespace PopKuru
                 // TODO Implement an image manager 
                 // ImageManager.ProcessCommand(Command command)
 
-                // TODO Handle commands // TODO implement a command manager
-                // CommandManager.Process(CurrentChapter.Text[LineNumber]);
+                // TODO Handle commands // TODO implement a command manager (?)
                 foreach (Command command in CurrentLine.Commands)
                 {
                     Debug.Log(command.ToString());
-                    if (command.CommandName == CommandName.enter)
+                    if (command.CommandName == CommandName.enter || command.CommandName == CommandName.exit)
                     {
                         print("Command " + command.CommandName);
 
