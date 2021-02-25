@@ -10,7 +10,7 @@ namespace PopKuru
     {
         // Managers
         SceneManager SceneManager;
-        TextManager TextManager; // Not yet implemented
+        TextManager TextManager;
 
         // Cashe the menu object
         GameObject[] Menus;
@@ -39,14 +39,9 @@ namespace PopKuru
         Line CurrentLine;
         int LineNumber;
         
-        // Dialogue and Command Handling
-        string SpeakerName;
-        string StoryText;
+        // Command Handling
         List<Command> Commands;
-        CharName CurrentSpeaker;
-        CharName LastSpeaker;
         string CommandString;
-
 
         void Awake()
         {
@@ -86,7 +81,8 @@ namespace PopKuru
         {
             if (LineNumber >= CurrentChapter.Text.Count)
             {
-                return;
+                LineNumber = 0;
+                Debug.LogWarning("Chapter restarted. Advancing to the next chapter not yet implemented.", this);
                 //TODO signal the end of the chapter and call GoNextChapter();
             }
             
@@ -98,23 +94,18 @@ namespace PopKuru
                 // TODO reposition characters based on the changed screen width
             }
 
-            
-
             if (LineNumber == 0)
             {
                 ProcessLine();
-                // Advance the line number
             }
 
             // User input
             if (Input.GetKeyDown(KeyCode.Space))
             {      
-                ProcessLine();
-                // Advance the line number
-                
+                ProcessLine();              
             }
             
-            // TODO Check for changes to the game state
+            // TODO Check for changes to the game state... such as ?
         }
 
         void ProcessLine()
@@ -129,8 +120,6 @@ namespace PopKuru
                 Debug.Log(command.ToString());
                 if (command.CommandName == CommandName.enter || command.CommandName == CommandName.exit)
                 {
-                    print("Command " + command.CommandName);
-
                     foreach (Character character in Characters)
                     {
                         if (command.Character == character.Name)
@@ -154,7 +143,7 @@ namespace PopKuru
             LineNumber++;
         }
 
-        // Transition to the next scene // Changes scene type
+        // TODO Transition to the next scene // Changes scene type
         public IEnumerator LoadNext(Scene nextScene){
             SaveGame();
             yield break;

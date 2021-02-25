@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using static PopKuru.CharName;
 using static PopKuru.CommandName;
 using static PopKuru.Expression;

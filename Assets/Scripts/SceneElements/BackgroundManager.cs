@@ -25,5 +25,7 @@ namespace PopKuru
             BackgroundImage image = new BackgroundImage(imageName); // TEMP // TODO move this to a list and draw from the list, updating when necessary.  Maybe scene manager does need to load backgrounds?
             BackgroundImageComponent.sprite = Resources.Load<Sprite>(image.FilePath);
         }
+
+        // TODO Fading and Transitioning Effects
     }
 }
