@@ -95,53 +95,63 @@ namespace PopKuru
             {
                 ScreenWidth = Screen.width;
                 Mover.ReSize((float) ScreenWidth);
-                Debug.Log("ScreenWidth recalibrated to " + ScreenWidth);
                 // TODO reposition characters based on the changed screen width
             }
 
-            // Check for changes to the game state
+            
+
+            if (LineNumber == 0)
+            {
+                ProcessLine();
+                // Advance the line number
+            }
 
             // User input
             if (Input.GetKeyDown(KeyCode.Space))
-            {
-                CurrentLine = CurrentChapter.Text[LineNumber];
+            {      
+                ProcessLine();
+                // Advance the line number
                 
-                // Call text manager on the current line
-                TextManager.ReadLine(CurrentLine);
+            }
+            
+            // TODO Check for changes to the game state
+        }
 
-                // TODO Implement an image manager 
-                // ImageManager.ProcessCommand(Command command)
+        void ProcessLine()
+        {
+            CurrentLine = CurrentChapter.Text[LineNumber];
+            // TODO Implement an image manager 
+            // ImageManager.ProcessCommand(Command command)
 
-                // TODO Handle commands // TODO implement a command manager (?)
-                foreach (Command command in CurrentLine.Commands)
+            // TODO Handle commands // TODO implement a command manager (?)
+            foreach (Command command in CurrentLine.Commands)
+            {
+                Debug.Log(command.ToString());
+                if (command.CommandName == CommandName.enter || command.CommandName == CommandName.exit)
                 {
-                    Debug.Log(command.ToString());
-                    if (command.CommandName == CommandName.enter || command.CommandName == CommandName.exit)
-                    {
-                        print("Command " + command.CommandName);
+                    print("Command " + command.CommandName);
 
-                        foreach (Character character in Characters)
+                    foreach (Character character in Characters)
+                    {
+                        if (command.Character == character.Name)
                         {
-                            if (command.Character == character.Name)
-                            {
-                                Mover.MoveTo(character.RT, command.Position);
-                            }
-                            
+                            Mover.MoveTo(character.RT, command.Position);
                         }
-                    }
-
-                    if (command.CommandName == CommandName.changeBackground)
-                    {
-                        BackgroundManager.LoadBackground(command.ImageName);
-                        Debug.Log("LoadBackground called");
+                        
                     }
                 }
 
-                
-
-                // Advance the line number
-                LineNumber++;
+                if (command.CommandName == CommandName.changeBackground)
+                {
+                    BackgroundManager.LoadBackground(command.ImageName);
+                    Debug.Log("LoadBackground called");
+                }
             }
+
+            // Call text manager on the current line
+            TextManager.ReadLine(CurrentLine);
+
+            LineNumber++;
         }
 
         // Transition to the next scene // Changes scene type
