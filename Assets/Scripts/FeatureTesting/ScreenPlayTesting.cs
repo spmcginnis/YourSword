@@ -50,10 +50,10 @@ namespace PopKuru
         void Start()
         {
             CurrentChapter = new GuildInterviewJin();
-            Backgrounds.Add(new BackgroundImage(BackgroundImage.ImageNameEnum.GuildHall1));
+            Backgrounds.Add(new BackgroundImage(BackgroundName.guildHall1));
             
             BPImageHook.color = new Color (1f, 1f, 1f, a:0.5f);
-            BPImageHook.sprite = Resources.Load<Sprite>(Backgrounds[0].File);
+            BPImageHook.sprite = Resources.Load<Sprite>(Backgrounds[0].FilePath);
             // TODO factor out into separate method that sets the image and the color(alpha) in one call.
             // The call to set an image should happen in GameManager (Main), not SceneManager.  The functionality should be defined in backgroundimage.
         }
@@ -109,7 +109,7 @@ namespace PopKuru
 
             if (Input.GetKeyDown(KeyCode.I))
             {             
-                print(Backgrounds[0].File);
+                print(Backgrounds[0].FilePath);
             }
         }
     }
