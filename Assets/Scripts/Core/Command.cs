@@ -11,7 +11,7 @@ namespace PopKuru
     {
         public CommandName CommandName {get; private set;}
         public CharName Character {get; private set;}
-        public string ImageName {get; private set;} // TEMP // TODO background image classes
+        public BackgroundName ImageName {get; private set;} // TEMP // TODO background image classes
         public Expression Expression {get; private set;}
         public StagePosition Position {get; private set;}
         public List<string> Args {get; private set;}
@@ -39,8 +39,8 @@ namespace PopKuru
             Position = position;
         }
 
-        // Constructor for images
-        public Command (CommandName name, string imageName, List<string> args = null)
+        // Constructor for images e.g. backgournds
+        public Command (CommandName name, BackgroundName imageName, List<string> args = null)
         {
             CommandName = name;
             ImageName = imageName;
@@ -56,7 +56,7 @@ namespace PopKuru
 
         public override string ToString()
         {
-            return $"CommandName: {(CommandName!=null? CommandName.ToString(): "")}, CharName {(Character!=null? Character.ToString(): "") }, ImageName: {(ImageName!=null? ImageName : "")}, Expression: {(Expression!=null? Expression.ToString(): "")}, StagePosition: {(Position!=null? Position.ToString():"")}, Args: {(Args!=null? Args.ToString():"")}" ;
+            return $"CommandName: {(CommandName!=null? CommandName.ToString(): "")}, CharName {(Character!=null? Character.ToString(): "") }, ImageName: {(ImageName!=null? ImageName.ToString() : "")}, Expression: {(Expression!=null? Expression.ToString(): "")}, StagePosition: {(Position!=null? Position.ToString():"")}, Args: {(Args!=null? Args.ToString():"")}" ;
         }
     }
 }

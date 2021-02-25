@@ -5,6 +5,7 @@ using static PopKuru.CharName;
 using static PopKuru.CommandName;
 using static PopKuru.Expression;
 using static PopKuru.StagePosition;
+using static PopKuru.BackgroundName;
 
 namespace PopKuru
 {
@@ -26,7 +27,7 @@ namespace PopKuru
                 {new Line(
                     commands: new List<Command>()
                     {
-                        new Command(changeBackground, "GuildInterviewBG"),
+                        new Command(changeBackground, guildHall1),
                         new Command(enter, margot, right),
                         new Command(changeExpression, margot, pleasant)
                     },                    
@@ -246,7 +247,7 @@ namespace PopKuru
                 {new Line(
                     commands: new List<Command>()
                     {
-                        new Command(changeBackground, "MCinGuild"), // TEMP   
+                        new Command(changeBackground, guildHall2), // TEMP   
                         new Command(exit, margot, offStage),
                         new Command(exit, jin, offStage)
                     }            
@@ -281,7 +282,7 @@ namespace PopKuru
                 {new Line(
                     commands: new List<Command>()
                     {
-                        new Command(changeBackground, "GuildInterviewBG"), // TEMP   
+                        new Command(changeBackground, guildHall1), // TEMP   
                         new Command(enter, margot, right),
                         new Command(enter, jin, left)
                     }            
