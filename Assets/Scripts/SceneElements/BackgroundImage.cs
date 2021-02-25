@@ -21,10 +21,13 @@ namespace PopKuru
         {
             this.ImageName = imageName;
             this.FilePath = ImagePathLookup[imageName];
+            Debug.Log($"BackgroundImage object created with ImageName: {ImageName} and FilePath {FilePath}");
+
             // TODO Guard Clause: if image doesn't exist, load default instead.
             if (this.FilePath == null)
             {
                 this.FilePath = ImagePathLookup[defaultBackground];
+                Debug.Log("No background image file found. Reverted to default.");
             }
         }
 

@@ -25,6 +25,11 @@ namespace PopKuru
 
         // Mover
         Mover Mover;
+        int ScreenWidth;
+
+        // Background Images
+        BackgroundManager BackgroundManager;
+        GameObject BackgroundPanel;
 
         // TEMP
         List<ScreenPlay> NextChapterChoices; // TODO offload to gamestate
@@ -42,7 +47,6 @@ namespace PopKuru
         CharName LastSpeaker;
         string CommandString;
 
-        int ScreenWidth;
 
         void Awake()
         {
@@ -67,6 +71,10 @@ namespace PopKuru
             SpeakerNameTextBox = GameObject.Find("SpeakerNameText").GetComponent<TextMeshProUGUI>();
             StoryTextBox = GameObject.Find("StoryText").GetComponent<TextMeshProUGUI>();
             TextManager = new TextManager(SpeakerNameTextBox, StoryTextBox);
+
+            // Instantiate Background Manager
+            BackgroundPanel = GameObject.Find("BackgroundPanel");
+            BackgroundManager = new BackgroundManager(BackgroundPanel);
         }
 
         void Start() 
@@ -120,6 +128,12 @@ namespace PopKuru
                             }
                             
                         }
+                    }
+
+                    if (command.CommandName == CommandName.changeBackground)
+                    {
+                        BackgroundManager.LoadBackground(command.ImageName);
+                        Debug.Log("LoadBackground called");
                     }
                 }
 

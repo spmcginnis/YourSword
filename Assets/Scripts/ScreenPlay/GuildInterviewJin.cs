@@ -282,7 +282,7 @@ namespace PopKuru
                 {new Line(
                     commands: new List<Command>()
                     {
-                        new Command(changeBackground, guildHall1), // TEMP   
+                        new Command(changeBackground, guildHall1),  
                         new Command(enter, margot, right),
                         new Command(enter, jin, left)
                     }            
