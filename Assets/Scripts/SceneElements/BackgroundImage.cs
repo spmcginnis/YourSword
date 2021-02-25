@@ -14,6 +14,7 @@ namespace PopKuru
         Dictionary<BackgroundName, string> ImagePathLookup = new Dictionary<BackgroundName, string>()
         {
             {guildHall1, "Images/Locations/GuildHall1"},
+            {guildHall2, ""},
             {defaultBackground, "Images/Locations/Guildhall1"} // TODO set default image
         };
 
@@ -21,10 +22,9 @@ namespace PopKuru
         {
             this.ImageName = imageName;
             this.FilePath = ImagePathLookup[imageName];
-            Debug.Log($"BackgroundImage object created with ImageName: {ImageName} and FilePath {FilePath}");
 
-            // TODO Guard Clause: if image doesn't exist, load default instead.
-            if (this.FilePath == null)
+            // Guard Clause: if image doesn't exist, load default instead.
+            if (this.FilePath == "")
             {
                 this.FilePath = ImagePathLookup[defaultBackground];
                 Debug.Log("No background image file found. Reverted to default.");
