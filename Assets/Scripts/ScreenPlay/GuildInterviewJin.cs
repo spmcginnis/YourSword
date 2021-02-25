@@ -28,11 +28,8 @@ namespace PopKuru
                     {
                         new Command(changeBackground, "GuildInterviewBG"),
                         new Command(enter, margot, right),
-                        new Command(enter, jin, left)
-                    }
-                )},
-                {new Line(
-                    new Command(changeExpression, margot, pleasant),
+                        new Command(changeExpression, margot, pleasant)
+                    },                    
                     speaker: margot,
                     storyText: "Oh, sorry...you’re the one who wanted to apply for guild membership today, aren’t you? I wasn’t expecting you for a while."
                     
@@ -46,6 +43,7 @@ namespace PopKuru
                     storyText: "Well don’t just stand there lurking in the doorway. Come in."
                 )},
                 {new Line(
+                    commands: new Command(enter, jin, left),
                     speaker:jin,
                     storyText: "Thanks."
                 )},
