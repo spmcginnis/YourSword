@@ -71,6 +71,7 @@ namespace PopKuru
         void LoadBackgrounds()
         {
             Debug.LogWarning("LoadBackgrounds() not implemented.");
+            // Load all the backgrounds in the scene and set their alpha value to zero.
         }
 
         void SetSceneType()
