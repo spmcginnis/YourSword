@@ -53,3 +53,4 @@
 *.meta linguist-generated
 *.prefab linguist-generated
 *.unity linguist-generated
+*.shader linguist-generated
