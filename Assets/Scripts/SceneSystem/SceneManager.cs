@@ -2,24 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace PopKuru
 {     
     public class SceneManager : MonoBehaviour
     {
-        Scene CurrentScene; // NOT USED RIGHT NOW
-        //TODO Expose the necessary data from CurrentScene to Unity
+        Scene CurrentScene; // NOT USED RIGHT NOW // TODO use scene type to determine menus and gui elements
         
         // Cashe the character objects for the scene.  The Character object has a rect transform property.
         public List<Character> Characters {get; private set; }
 
-        // Cashe the BackgroundImageLocations for the scene. //TODO Change to a list of location objects
-        public Dictionary<string, string> BackgroundImages {get; private set; }
-
         // // Unity Game Objects
         RectTransform CharacterPanel;
 
-        // Mover // TODO refactor as an interface (?)
+        // Mover
         Mover Mover;
 
         ScreenPlay CurrentChapter;
@@ -28,15 +25,13 @@ namespace PopKuru
         {
             Characters = new List<Character>(); // Is this necessary?
             CurrentChapter = null;
-            CharacterPanel = GameObject.Find("CharacterPanel").GetComponent<RectTransform>(); 
+            CharacterPanel = GameObject.Find("CharacterPanel").GetComponent<RectTransform>();
         }
 
         public void SetUp(ScreenPlay currentChapter)
         {
             CurrentChapter = currentChapter;
-            
             Mover = new Mover((float) Screen.width);
-            // LoadBackgrounds(); // Don't show them yet.  Show/hide should be handled by GamePlayManager.
             LoadCharacters();
             LoadCharacterPrefabs();
             // LoadCutScenes(); // If cutscenes are part of standardscene // cutscene and special cutscene? cutscene and cinematic?
@@ -65,13 +60,6 @@ namespace PopKuru
                 character.RT = prefabGameObj.GetComponent<RectTransform>();
                 Mover.MoveTo(character.RT, StagePosition.offStage); // move offstage to start
             }
-        }
-
-        // TODO Load Background Images
-        void LoadBackgrounds()
-        {
-            Debug.LogWarning("LoadBackgrounds() not implemented.");
-            // Load all the backgrounds in the scene and set their alpha value to zero.
         }
 
         void SetSceneType()

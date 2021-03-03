@@ -9,13 +9,13 @@ namespace PopKuru
     {
         public BackgroundName ImageName {get; private set; }
         public string FilePath {get; private set; }
-
+        const string Root = "Images/Locations/";
         // Stores a lookup of names with locations relative to the Resources folder.
         Dictionary<BackgroundName, string> ImagePathLookup = new Dictionary<BackgroundName, string>()
         {
-            {guildHall1, "Images/Locations/GuildHall1"},
-            {guildHall2, ""},
-            {defaultBackground, "Images/Locations/Guildhall1"} // TODO set default image
+            {guildHall1, Root + "GuildHall1"},
+            {guildHall2, Root + "ServerGirl"},
+            {defaultBackground, Root + "Guildhall1"} // TODO set default image
         };
 
         public BackgroundImage(BackgroundName imageName)
