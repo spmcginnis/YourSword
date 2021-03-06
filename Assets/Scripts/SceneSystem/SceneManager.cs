@@ -23,7 +23,6 @@ namespace PopKuru
 
         void Awake()
         {
-            Characters = new List<Character>(); // Is this necessary?
             CurrentChapter = null;
             CharacterPanel = GameObject.Find("CharacterPanel").GetComponent<RectTransform>();
         }
@@ -32,33 +31,31 @@ namespace PopKuru
         {
             CurrentChapter = currentChapter;
             Mover = new Mover((float) Screen.width);
+            Characters = new List<Character>();
             LoadCharacters();
-            LoadCharacterPrefabs();
             // LoadCutScenes(); // If cutscenes are part of standardscene // cutscene and special cutscene? cutscene and cinematic?
             // Destroy Mover when setup is complete.
         }
 
-        void LoadCharacters()
+        void LoadCharacters() // TODO Merge LoadCharacters and LoadCharacterPrefabs.  Pass Character a RT at initialization
         {
             if (CurrentChapter.CastOfCharacters.Count == 0) {return;} // Guard Clause
-            Characters = new List<Character>();
-            // TODO change the input type from generic string to controlled vocabulary
-            foreach (CharName name in CurrentChapter.CastOfCharacters)
+
+            foreach (CharName charName in CurrentChapter.CastOfCharacters)
             {
-                Character toAdd = new Character(name);
-                Characters.Add(toAdd);
-            }
-        }
-    
-        void LoadCharacterPrefabs() // attach the prefab to the character panel
-        {
-            foreach (Character character in Characters)
-            {
-                Object prefab = Resources.Load($"Prefabs/CharacterPrefabs/Character[{character.Name}]"); // 1. load the prefab
+                // Identify and load prefab, RectTransform
+                Object prefab = Resources.Load($"Prefabs/CharacterPrefabs/Character[{charName}]"); // 1. load the prefab
                 GameObject prefabGameObj = Instantiate(prefab) as GameObject; // 2. Instantiate the prefab as a GameObject
                 prefabGameObj.transform.SetParent(CharacterPanel); // 3. Set the parent property to be the character panel
-                character.RT = prefabGameObj.GetComponent<RectTransform>();
-                Mover.MoveTo(character.RT, StagePosition.offStage); // move offstage to start
+                RectTransform RT = prefabGameObj.GetComponent<RectTransform>();
+
+                Character character = new Character(charName, RT);
+                
+                // Add it to the list
+                Characters.Add(character); 
+                
+                // move offstage to start
+                Mover.MoveTo(character.RT, StagePosition.offStage);
             }
         }
 
