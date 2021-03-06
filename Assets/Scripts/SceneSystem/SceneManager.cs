@@ -24,32 +24,30 @@ namespace PopKuru
         void Awake()
         {
             CurrentChapter = null;
-            CharacterPanel = GameObject.Find("CharacterPanel").GetComponent<RectTransform>();
         }
 
         public void SetUp(ScreenPlay currentChapter)
         {
+            CharacterPanel = GameObject.Find("CharacterPanel").GetComponent<RectTransform>();
             CurrentChapter = currentChapter;
             Mover = new Mover((float) Screen.width);
             Characters = new List<Character>();
             LoadCharacters();
             // LoadCutScenes(); // If cutscenes are part of standardscene // cutscene and special cutscene? cutscene and cinematic?
-            // Destroy Mover when setup is complete.
+            // TODO Destroy Mover when setup is complete.
         }
 
-        void LoadCharacters() // TODO Merge LoadCharacters and LoadCharacterPrefabs.  Pass Character a RT at initialization
+        void LoadCharacters()
         {
             if (CurrentChapter.CastOfCharacters.Count == 0) {return;} // Guard Clause
 
             foreach (CharName charName in CurrentChapter.CastOfCharacters)
             {
-                // Identify and load prefab, RectTransform
-                Object prefab = Resources.Load($"Prefabs/CharacterPrefabs/Character[{charName}]"); // 1. load the prefab
-                GameObject prefabGameObj = Instantiate(prefab) as GameObject; // 2. Instantiate the prefab as a GameObject
-                prefabGameObj.transform.SetParent(CharacterPanel); // 3. Set the parent property to be the character panel
-                RectTransform RT = prefabGameObj.GetComponent<RectTransform>();
+                // Identify and load prefab, RectTransform // I think I have to use prefabs for the positioning.
+                GameObject prefab = Instantiate(Resources.Load($"Prefabs/CharacterPrefabs/Character[{charName}]") as GameObject); // Load the prefab as GO and instantiate it
+                prefab.transform.SetParent(CharacterPanel); // Set the parent property to be the character panel
 
-                Character character = new Character(charName, RT);
+                Character character = new Character(charName, prefab);
                 
                 // Add it to the list
                 Characters.Add(character); 
