@@ -7,15 +7,15 @@ using static PopKuru.Expression;
 
 namespace PopKuru
 {
-    public class Command // TODO refactor this into an interface?
+    public class Command
     {
         public CommandName CommandName {get; private set;}
         public CharName Character {get; private set;}
-        public BackgroundName ImageName {get; private set;} // TEMP // TODO background image classes
+        public BackgroundName ImageName {get; private set;}
         public Expression Expression {get; private set;}
         public StagePosition Position {get; private set;}
         public List<string> Args {get; private set;}
-
+        
         // Constructor for characters
         public Command (CommandName name, CharName character, List<string> args = null)
         {
@@ -58,5 +58,7 @@ namespace PopKuru
         {
             return $"CommandName: {(CommandName!=null? CommandName.ToString(): "")}, CharName {(Character!=null? Character.ToString(): "") }, ImageName: {(ImageName!=null? ImageName.ToString() : "")}, Expression: {(Expression!=null? Expression.ToString(): "")}, StagePosition: {(Position!=null? Position.ToString():"")}, Args: {(Args!=null? Args.ToString():"")}" ;
         }
+
+
     }
 }
