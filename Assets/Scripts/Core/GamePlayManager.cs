@@ -79,6 +79,7 @@ namespace PopKuru
 
         void Update()
         {
+            // TODO Implement auto forwarding when there is a command with no associated text.  There could be a wait time depending on the command.  For example, a background change with a transition might have a delay before forwarding, while a character entrance or exit might not need one, or it might need a shorter one.
             if (LineNumber >= CurrentChapter.Text.Count)
             {
                 LineNumber = 0;

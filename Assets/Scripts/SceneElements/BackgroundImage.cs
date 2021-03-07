@@ -10,6 +10,7 @@ namespace PopKuru
         public BackgroundName ImageName {get; private set; }
         public string FilePath {get; private set; }
         const string Root = "Images/Locations/";
+        
         // Stores a lookup of names with locations relative to the Resources folder.
         Dictionary<BackgroundName, string> ImagePathLookup = new Dictionary<BackgroundName, string>()
         {

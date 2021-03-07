@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace PopKuru
 {
-    public class ImageSet
+    public class ImageSet // NOT IN USE
     {
         public string IndexOf { get; private set;}
         public string Body { get; private set; }
