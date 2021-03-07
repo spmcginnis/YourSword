@@ -136,6 +136,17 @@ namespace PopKuru
                     BackgroundManager.LoadBackground(command.ImageName);
                     Debug.Log("LoadBackground called");
                 }
+
+                if (command.CommandName == CommandName.changeExpression)
+                {
+                    foreach (Character character in Characters)
+                    {
+                        if (command.Character == character.Name)
+                        {
+                            character.ChangeExpression(command.Expression);
+                        }
+                    }
+                }
             }
 
             // Call text manager on the current line
