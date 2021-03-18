@@ -149,6 +149,136 @@ namespace PopKuru
                 {
                     ["Body"] = BlankSprite,
                     ["Face"] = "Images/Characters/Salvador/SalFriendlyBlink"
+                },
+                [Expression.neutral] = new Dictionary<string, string>
+                {
+                    ["Body"] = BlankSprite,
+                    ["Face"] = "Images/Characters/Salvador/SalCalmEyes"
+                },
+                [Expression.cheerful] = new Dictionary<string, string>
+                {
+                    ["Body"] = BlankSprite,
+                    ["Face"] = "Images/Characters/Salvador/SalFriendlyBlink"
+                },
+                [Expression.annoyed] = new Dictionary<string, string>
+                {
+                    ["Body"] = BlankSprite,
+                    ["Face"] = "Images/Characters/Salvador/SalSkeptical"
+                },
+                [Expression.soft] = new Dictionary<string, string>
+                {
+                    ["Body"] = BlankSprite,
+                    ["Face"] = "Images/Characters/Salvador/SalSmileBlink"
+                },
+                [Expression.sad] = new Dictionary<string, string>
+                {
+                    ["Body"] = BlankSprite,
+                    ["Face"] = "Images/Characters/Salvador/SalSkeptical"
+                },
+                [Expression.tearful] = new Dictionary<string, string>
+                {
+                    ["Body"] = BlankSprite,
+                    ["Face"] = "Images/Characters/Salvador/SalSkeptical"
+                },
+                [Expression.surprised] = new Dictionary<string, string>
+                {
+                    ["Body"] = BlankSprite,
+                    ["Face"] = "Images/Characters/Salvador/SalSurprised"
+                },
+                [Expression.angry] = new Dictionary<string, string>
+                {
+                    ["Body"] = BlankSprite,
+                    ["Face"] = "Images/Characters/Salvador/SalAngry"
+                },
+                [Expression.blushing] = new Dictionary<string, string>
+                {
+                    ["Body"] = BlankSprite,
+                    ["Face"] = "Images/Characters/Salvador/SalAnxiousLaugh"
+                },
+                [Expression.superblushing] = new Dictionary<string, string>
+                {
+                    ["Body"] = BlankSprite,
+                    ["Face"] = "Images/Characters/Salvador/SalAnxiousLaugh"
+                },
+                [Expression.flirty] = new Dictionary<string, string>
+                {
+                    ["Body"] = BlankSprite,
+                    ["Face"] = "Images/Characters/Salvador/SalSmirkWink"
+                },
+                [Expression.confused] = new Dictionary<string, string>
+                {
+                    ["Body"] = BlankSprite,
+                    ["Face"] = "Images/Characters/Salvador/SalAnxiousLaugh"
+                }
+            };
+
+        public static Dictionary<Expression, Dictionary<string, string>> Auden =
+            new Dictionary<Expression, Dictionary<string, string>>
+            {
+                [Expression.starting] = new Dictionary<string, string>
+                {
+                    ["Body"] = BlankSprite,
+                    ["Face"] = "Images/Characters/Auden/AudenCloakSkeptical"
+                },
+                [Expression.neutral] = new Dictionary<string, string>
+                {
+                    ["Body"] = BlankSprite,
+                    ["Face"] = "Images/Characters/Auden/AudenCloakFrown"
+                },
+                [Expression.cheerful] = new Dictionary<string, string>
+                {
+                    ["Body"] = BlankSprite,
+                    ["Face"] = "Images/Characters/Auden/AudenCloakCrazyEyed"
+                },
+                [Expression.annoyed] = new Dictionary<string, string>
+                {
+                    ["Body"] = BlankSprite,
+                    ["Face"] = "Images/Characters/Auden/AudenCloakAnnoyed"
+                },
+                [Expression.soft] = new Dictionary<string, string>
+                {
+                    ["Body"] = BlankSprite,
+                    ["Face"] = "Images/Characters/Auden/AudenCloakSideSmile"
+                },
+                [Expression.sad] = new Dictionary<string, string>
+                {
+                    ["Body"] = BlankSprite,
+                    ["Face"] = "Images/Characters/Auden/AudenCloakGrumpy"
+                },
+                [Expression.tearful] = new Dictionary<string, string>
+                {
+                    ["Body"] = BlankSprite,
+                    ["Face"] = "Images/Characters/Auden/AudenCloakGrumpy"
+                },
+                [Expression.surprised] = new Dictionary<string, string>
+                {
+                    ["Body"] = BlankSprite,
+                    ["Face"] = "Images/Characters/Auden/AudenCloakCrazyEyed"
+                },
+                [Expression.angry] = new Dictionary<string, string>
+                {
+                    ["Body"] = BlankSprite,
+                    ["Face"] = "Images/Characters/Auden/AudenCloakMoreAngry"
+                },
+                [Expression.blushing] = new Dictionary<string, string>
+                {
+                    ["Body"] = BlankSprite,
+                    ["Face"] = "Images/Characters/Auden/AudenCloakBlushing"
+                },
+                [Expression.superblushing] = new Dictionary<string, string>
+                {
+                    ["Body"] = BlankSprite,
+                    ["Face"] = "Images/Characters/Auden/AudenCloakBlushing"
+                },
+                [Expression.flirty] = new Dictionary<string, string>
+                {
+                    ["Body"] = BlankSprite,
+                    ["Face"] = "Images/Characters/Auden/AudenCloakSideSmile"
+                },
+                [Expression.confused] = new Dictionary<string, string>
+                {
+                    ["Body"] = BlankSprite,
+                    ["Face"] = "Images/Characters/Auden/AudenCloakSkeptical"
                 }
             };
         
