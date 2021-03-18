@@ -17,6 +17,14 @@ namespace PopKuru
     // confused
     // starting // the default
 
+    // Checklist
+        // Auden // standards done
+        // Jin // need update for standard expressions
+        // Margot // need update for standard expresssions
+        // Salvador // standards done
+        // Greylin
+        // Lua
+        // Cassandra
 
     public enum Expression
     {
@@ -282,7 +290,77 @@ namespace PopKuru
                 }
             };
         
-        public static Dictionary<Expression, Dictionary<string, string>> Template =
+        public static Dictionary<Expression, Dictionary<string, string>> Lua =
+            new Dictionary<Expression, Dictionary<string, string>>
+            {
+                [Expression.starting] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Lua/LuaBody2b",
+                    ["Face"] = "Images/Characters/Lua/LuaBody2bWarm"
+                },
+                [Expression.neutral] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Lua/LuaBody1a",
+                    ["Face"] = "Images/Characters/Lua/LuaBody1Warm"
+                },
+                [Expression.cheerful] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Lua/LuaBody2b",
+                    ["Face"] = "Images/Characters/Lua/LuaBody2bHappy"
+                },
+                [Expression.annoyed] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Lua/LuaBody1b",
+                    ["Face"] = "Images/Characters/Lua/LuaBody1FaceDetermined"
+                },
+                [Expression.soft] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Lua/LuaBody1a",
+                    ["Face"] = "Images/Characters/Lua/LuaBody1FaceAroused"
+                },
+                [Expression.sad] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Lua/LuaBody2a",
+                    ["Face"] = "Images/Characters/Lua/LuaBody2Sad"
+                },
+                [Expression.tearful] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Lua/LuaBody1a",
+                    ["Face"] = "Images/Characters/Lua/LuaBody1FaceBlushingCry"
+                },
+                [Expression.surprised] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Lua/LuaBody1a",
+                    ["Face"] = "Images/Characters/Lua/LuaBody1FaceSurprised"
+                },
+                [Expression.angry] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Lua/LuaBody2a",
+                    ["Face"] = "Images/Characters/Lua/LuaBody2bAngry"
+                },
+                [Expression.blushing] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Lua/LuaBody1a",
+                    ["Face"] = "Images/Characters/Lua/LuaBody1FaceBlushingSmile"
+                },
+                [Expression.superblushing] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Lua/LuaBody2a",
+                    ["Face"] = "Images/Characters/Lua/LuaBody2bEmbarrassed"
+                },
+                [Expression.flirty] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Lua/LuaBody2b",
+                    ["Face"] = "Images/Characters/Lua/LuaBody2bHappy"
+                },
+                [Expression.confused] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Lua/LuaBody1a",
+                    ["Face"] = "Images/Characters/Lua/LuaBody1FaceBlush"
+                }
+            };
+
+            public static Dictionary<Expression, Dictionary<string, string>> Template =
             new Dictionary<Expression, Dictionary<string, string>>
             {
                 [Expression.starting] = new Dictionary<string, string>
