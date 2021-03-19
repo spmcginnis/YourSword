@@ -48,6 +48,26 @@ namespace PopKuru
                     this.Body.sprite = Resources.Load<Sprite>(ExpressionLookup.Jin[expression]["Body"]);
                     this.Face.sprite = Resources.Load<Sprite>(ExpressionLookup.Jin[expression]["Face"]);
                     break;
+                case (cassandra):
+                    this.Body.sprite = Resources.Load<Sprite>(ExpressionLookup.Cassandra[expression]["Body"]);
+                    this.Face.sprite = Resources.Load<Sprite>(ExpressionLookup.Cassandra[expression]["Face"]);
+                    break;
+                case (lua):
+                    this.Body.sprite = Resources.Load<Sprite>(ExpressionLookup.Lua[expression]["Body"]);
+                    this.Face.sprite = Resources.Load<Sprite>(ExpressionLookup.Lua[expression]["Face"]);
+                    break;
+                case (greylin):
+                    this.Body.sprite = Resources.Load<Sprite>(ExpressionLookup.Greylin[expression]["Body"]);
+                    this.Face.sprite = Resources.Load<Sprite>(ExpressionLookup.Greylin[expression]["Face"]);
+                    break;
+                case (auden):
+                    this.Body.sprite = Resources.Load<Sprite>(ExpressionLookup.Auden[expression]["Body"]);
+                    this.Face.sprite = Resources.Load<Sprite>(ExpressionLookup.Auden[expression]["Face"]);
+                    break;
+                case (salvador):
+                    this.Body.sprite = Resources.Load<Sprite>(ExpressionLookup.Salvador[expression]["Body"]);
+                    this.Face.sprite = Resources.Load<Sprite>(ExpressionLookup.Salvador[expression]["Face"]);
+                    break;                                          
             }
 
         }

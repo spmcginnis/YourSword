@@ -5,6 +5,11 @@ namespace PopKuru
         margot,
         jin,
         narrator,
+        greylin,
+        cassandra,
+        lua,
+        salvador,
+        auden,
         none
         // public const string margot = "Margot";
         // public const string jin = "Jin";

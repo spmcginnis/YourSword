@@ -50,7 +50,7 @@ namespace PopKuru
 
             // Instantiate the Scene Manager
             SceneManager = GameObject.Find("Managers").GetComponent<SceneManager>();
-            CurrentChapter = new GuildInterviewJin(); // TEMP // TODO get the information from gamestate
+            CurrentChapter = new CharacterTesting(); // TEMP // TODO get the information from gamestate
             NextChapterChoices = new List<ScreenPlay>() // TEMP // TODO get the information from gamestate
             {
               {new GuildInterviewJin()}  
