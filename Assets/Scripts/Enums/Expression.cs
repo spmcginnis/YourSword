@@ -22,9 +22,9 @@ namespace PopKuru
         // Jin // need update for standard expressions
         // Margot // need update for standard expresssions
         // Salvador // standards done
-        // Greylin
-        // Lua
-        // Cassandra
+        // Greylin // Standards done
+        // Lua // standards done
+        // Cassandra // standards done
 
     public enum Expression
     {
@@ -357,6 +357,146 @@ namespace PopKuru
                 {
                     ["Body"] = "Images/Characters/Lua/LuaBody1a",
                     ["Face"] = "Images/Characters/Lua/LuaBody1FaceBlush"
+                }
+            };
+
+            public static Dictionary<Expression, Dictionary<string, string>> Greylin =
+            new Dictionary<Expression, Dictionary<string, string>>
+            {
+                [Expression.starting] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Greylin/GreylinBody1",
+                    ["Face"] = "Images/Characters/Greylin/GreylinBody1Frown"
+                },
+                [Expression.neutral] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Greylin/GreylinBody1",
+                    ["Face"] = "Images/Characters/Greylin/GreylinBody1Frown"
+                },
+                [Expression.cheerful] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Greylin/GreylinBody1",
+                    ["Face"] = "Images/Characters/Greylin/GreylinBody1Smile"
+                },
+                [Expression.annoyed] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Greylin/GreylinBody1",
+                    ["Face"] = "Images/Characters/Greylin/GreylinBody1FrownBlink"
+                },
+                [Expression.soft] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Greylin/GreylinBody1",
+                    ["Face"] = "Images/Characters/Greylin/GreylinBody1Smile"
+                },
+                [Expression.sad] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Greylin/GreylinBody1",
+                    ["Face"] = "Images/Characters/Greylin/GreylinBody1FrownBlink"
+                },
+                [Expression.tearful] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Greylin/GreylinBody1",
+                    ["Face"] = "Images/Characters/Greylin/GreylinBody1FrownBlink"
+                },
+                [Expression.surprised] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Greylin/GreylinBody1",
+                    ["Face"] = "Images/Characters/Greylin/GreylinBody1Smile"
+                },
+                [Expression.angry] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Greylin/GreylinBody1",
+                    ["Face"] = "Images/Characters/Greylin/GreylinBody1FrownBlink"
+                },
+                [Expression.blushing] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Greylin/GreylinBody1",
+                    ["Face"] = "Images/Characters/Greylin/GreylinBody1FrownBlushBlink"
+                },
+                [Expression.superblushing] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Greylin/GreylinBody1",
+                    ["Face"] = "Images/Characters/Greylin/GreylinBody1FrownBlushBlink"
+                },
+                [Expression.flirty] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Greylin/GreylinBody1",
+                    ["Face"] = "Images/Characters/Greylin/GreylinBody1FrownBlush"
+                },
+                [Expression.confused] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Greylin/GreylinBody1",
+                    ["Face"] = "Images/Characters/Greylin/GreylinBody1FrownBlink"
+                }
+            };
+            
+            public static Dictionary<Expression, Dictionary<string, string>> Cassandra =
+            new Dictionary<Expression, Dictionary<string, string>>
+            {
+                [Expression.starting] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Cassandra/CassandraBody1",
+                    ["Face"] = "Images/Characters/Cassandra/CassandraBody1Cool"
+                },
+                [Expression.neutral] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Cassandra/CassandraBody1",
+                    ["Face"] = "Images/Characters/Cassandra/CassandraBody1Cool"
+                },
+                [Expression.cheerful] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Cassandra/CassandraBody1",
+                    ["Face"] = "Images/Characters/Cassandra/CassandraBody1Cool"
+                },
+                [Expression.annoyed] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Cassandra/CassandraBody1",
+                    ["Face"] = "Images/Characters/Cassandra/CassandraBody1Wince"
+                },
+                [Expression.soft] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Cassandra/CassandraBody1",
+                    ["Face"] = "Images/Characters/Cassandra/CassandraBody1Cool"
+                },
+                [Expression.sad] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Cassandra/CassandraBody1",
+                    ["Face"] = "Images/Characters/Cassandra/CassandraBody1Wince"
+                },
+                [Expression.tearful] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Cassandra/CassandraBody1",
+                    ["Face"] = "Images/Characters/Cassandra/CassandraBody1Wince"
+                },
+                [Expression.surprised] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Cassandra/CassandraBody1",
+                    ["Face"] = "Images/Characters/Cassandra/CassandraBody1Wince"
+                },
+                [Expression.angry] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Cassandra/CassandraBody1",
+                    ["Face"] = "Images/Characters/Cassandra/CassandraBody1Wince"
+                },
+                [Expression.blushing] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Cassandra/CassandraBody1",
+                    ["Face"] = "Images/Characters/Cassandra/CassandraBody1Blush"
+                },
+                [Expression.superblushing] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Cassandra/CassandraBody1",
+                    ["Face"] = "Images/Characters/Cassandra/CassandraBody1Blush"
+                },
+                [Expression.flirty] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Cassandra/CassandraBody1",
+                    ["Face"] = "Images/Characters/Cassandra/CassandraBody1Blush"
+                },
+                [Expression.confused] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Cassandra/CassandraBody1",
+                    ["Face"] = "Images/Characters/Cassandra/CassandraBody1Wince"
                 }
             };
 

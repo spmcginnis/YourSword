@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace PopKuru
 {
-    public class CharacterTesting : SceneManager
+    public class CharacterTesting : GamePlayManager
     {
 
         void Start()
