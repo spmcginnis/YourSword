@@ -61,6 +61,18 @@ namespace PopKuru
     public static class ExpressionLookup
     {
         const string BlankSprite = "Images/BlankSprite";
+        const string RootPath = "Images/Characters/";
+        public static Dictionary<CharName, string> Thumbnail =
+            new Dictionary<CharName, string>
+            {
+                [auden] = RootPath + "Auden/AudenThumbnail";
+                [cassandra] = RootPath + "Cassandra/CassandraThumbnail";
+                [greylin] = RootPath + "Greylin/GreylinThumbnail";
+                [jin] = RootPath + "Jin/JinThumbnail";
+                [lua] = RootPath + "Lua/LuaThumbnail";
+                [margot] = RootPath + "Margot/MargotThumbnail";
+                [salvador] = RootPath + "Salvador/SalvadorThumbnail";
+            }
 
         public static Dictionary<Expression, Dictionary<string, string>> Margot =
             new Dictionary<Expression, Dictionary<string, string>>

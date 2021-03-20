@@ -35,6 +35,8 @@ namespace PopKuru
             ChangeExpression(starting);
         }
         
+        
+
         // change expression // needs image hook and filepath
         public void ChangeExpression(Expression expression) // TODO add transition effects // Is the switch case necessary?  There should be a way to avoid it now.
         {
