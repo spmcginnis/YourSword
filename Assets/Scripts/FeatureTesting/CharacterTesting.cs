@@ -29,8 +29,8 @@ namespace PopKuru
                     {
                         new Command(changeBackground, guildHall1),
                         new Command(enter, cassandra, right),
-                        new Command(enter, lua, left),
-                        new Command(enter, salvador, center)
+                        new Command(enter, lua, right),
+                        new Command(enter, salvador, right)
                     }
                 )},
                 {new Line(
@@ -127,6 +127,15 @@ namespace PopKuru
                         new Command(changeExpression, cassandra, confused),
                         new Command(changeExpression, lua, confused),
                         new Command(changeExpression, salvador, confused)
+                    }
+                )}
+                ,   
+                {new Line(
+                    commands: new List<Command>()
+                    {
+                        new Command(exit, cassandra),
+                        new Command(exit, lua),
+                        new Command(exit, salvador)
                     }
                 )}
 

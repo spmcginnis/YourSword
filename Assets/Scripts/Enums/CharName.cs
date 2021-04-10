@@ -2,6 +2,7 @@ namespace PopKuru
 {
     public enum CharName
     {
+        none,
         margot,
         jin,
         narrator,
@@ -9,8 +10,7 @@ namespace PopKuru
         cassandra,
         lua,
         salvador,
-        auden,
-        none
+        auden
         // public const string margot = "Margot";
         // public const string jin = "Jin";
         // public const string narrator = "Narrator";

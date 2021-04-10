@@ -2,6 +2,6 @@ namespace PopKuru
 {
     public enum StagePosition
     {
-        center, right, left, offStage
+        noPosition, offStage, center, right, left
     }
 }

@@ -97,7 +97,7 @@ namespace PopKuru
 
             if (LineNumber == 0)
             {
-                ProcessLine();
+                Debug.Log("Press spacebar to begin.");
             }
 
             // User input
@@ -107,6 +107,40 @@ namespace PopKuru
             }
             
             // TODO Check for changes to the game state... such as ?
+        }
+
+        int CountCharactersOnSide(StagePosition position)
+        {   
+            Debug.Log($"CountCOS fired. StagePosition is {position}");
+            int count = 0;
+            int side = 0;
+
+            if (position == StagePosition.left)
+            {
+                side = -1;
+            } 
+            else if (position == StagePosition.right)
+            {
+                side = 1;
+            }
+            else
+            {
+                Debug.Log($"CountCOS returned without counting");
+                return 0;
+            }
+            
+            RectTransform characterPanel = (RectTransform) GameObject.Find("CharacterPanel").transform;
+            
+            foreach (RectTransform child in characterPanel)
+            {
+                if (child.anchoredPosition.x * side > 0)
+                {
+                    count += 1;
+                    Debug.Log($"Child.anchoredPosition.x is {child.anchoredPosition.x} side modifier is {side} and side/position is {position}");
+                }
+            }
+
+            return count;
         }
 
         void ProcessLine()
@@ -119,17 +153,36 @@ namespace PopKuru
             foreach (Command command in CurrentLine.Commands)
             {
                 Debug.Log(command.ToString());
-                if (command.CommandName == CommandName.enter || command.CommandName == CommandName.exit)
+                if (command.CommandName == CommandName.enter || command.CommandName == CommandName.move)
                 {
                     foreach (Character character in Characters)
                     {
                         if (command.Character == character.Name)
                         {
-                            Mover.MoveTo(character.RT, command.Position);
+                            // check for characters at the position
+                            int count = CountCharactersOnSide(command.Position);
+                            Debug.Log($"Count on {command.Position} is {count}");
+
+                            Mover.MoveTo(character.RT, command.Position, count);
                         }
                         
                     }
                 }
+
+                if (command.CommandName == CommandName.exit) 
+                {
+                    foreach (Character character in Characters)
+                    {
+                        if (command.Character == character.Name)
+                        {
+                            Mover.MoveTo(character.RT, StagePosition.offStage);
+                        }
+                        
+                    } 
+                }
+
+                // TODO // Simple move command that is not enter exit
+
 
                 if (command.CommandName == CommandName.changeBackground)
                 {
