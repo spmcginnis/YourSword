@@ -30,7 +30,7 @@ namespace PopKuru
             float spriteWidth = RT.sizeDelta.x;
             float margin = (ScreenWidth - spriteWidth) / 2;
             float distance;
-            float[] scale = new float[]{.5f, .33f, .66f, .2f, .8f, .125f, .875f};
+            float[] scale = new float[]{.66f, .33f, .2f, .8f, .125f, .875f};
             switch (newPosition)
             {
                 case StagePosition.offStage:

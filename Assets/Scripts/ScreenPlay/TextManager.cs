@@ -14,7 +14,7 @@ namespace PopKuru
         TextMeshProUGUI StoryTextBox;
 
         // Tracking the Speaker
-        CharName CurrentSpeaker;
+        public CharName CurrentSpeaker {get; private set;}
         CharName LastSpeaker;
         string SpeakerName;
 
@@ -28,11 +28,21 @@ namespace PopKuru
         // Process Text and Text related commands
         public void ReadLine(Line line)
         {
+            Debug.Log("Storytext is " + line.StoryText);
+            
+            if (line.StoryText == null)
+            {
+                SpeakerNameTextBox.text = " ";
+                StoryTextBox.text = " ";
+                return;
+            }
+            
             CurrentSpeaker = line.Speaker;
 
             if (CurrentSpeaker == null || CurrentSpeaker == none)
             {
-                SpeakerName = LastSpeaker.ToString("g");
+                CurrentSpeaker = LastSpeaker; 
+                SpeakerName = CurrentSpeaker.ToString("g");
             }
             else
             {
@@ -40,8 +50,8 @@ namespace PopKuru
                 SpeakerName = CurrentSpeaker.ToString("g");
             }
 
-            SpeakerNameTextBox.text = (line.StoryText != null) ? SpeakerName : " ";
-            StoryTextBox.text = (line.StoryText != null) ? line.StoryText : " ";
+            SpeakerNameTextBox.text = SpeakerName;
+            StoryTextBox.text = line.StoryText;
         }
 
         // TODO Find last speaker

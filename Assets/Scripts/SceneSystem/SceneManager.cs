@@ -47,7 +47,8 @@ namespace PopKuru
                 GameObject prefab = Instantiate(Resources.Load($"Prefabs/CharacterPrefabs/Character[{charName}]") as GameObject); // Load the prefab as GO and instantiate it
                 prefab.transform.SetParent(CharacterPanel); // Set the parent property to be the character panel
 
-                Character character = new Character(charName, prefab);
+                Sprite thumbnail = Resources.Load<Sprite>($"Images/Thumbnails/{charName}Thumbnail");
+                Character character = new Character(charName, prefab, thumbnail);
                 
                 // Add it to the list
                 Characters.Add(character); 

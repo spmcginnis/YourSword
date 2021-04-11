@@ -20,6 +20,9 @@ namespace PopKuru
         TextMeshProUGUI SpeakerNameTextBox;
         TextMeshProUGUI StoryTextBox;
 
+        // Thumbnail Hook
+        Image ThumbHook;
+
         // Characters
         List<Character> Characters;
 
@@ -50,7 +53,12 @@ namespace PopKuru
 
             // Instantiate the Scene Manager
             SceneManager = GameObject.Find("Managers").GetComponent<SceneManager>();
-            CurrentChapter = new CharacterTesting(); // TEMP // TODO get the information from gamestate
+            
+            // TEMP // TODO get the information from gamestate 
+            // CurrentChapter = new CharacterTesting();
+            CurrentChapter = new GuildInterviewJin();
+                // The awake call will happen on game start, right? so this should call the loading and title scenes (?)
+            
             NextChapterChoices = new List<ScreenPlay>() // TEMP // TODO get the information from gamestate
             {
               {new GuildInterviewJin()}  
@@ -70,6 +78,9 @@ namespace PopKuru
             // Instantiate Background Manager
             BackgroundPanel = GameObject.Find("BackgroundPanel");
             BackgroundManager = new BackgroundManager(BackgroundPanel);
+
+            // Cashe the ThumbHook
+            ThumbHook = GameObject.Find("SpeakerFace").GetComponent<Image>();
         }
 
         void Start() 
@@ -82,6 +93,7 @@ namespace PopKuru
             // TODO Implement auto forwarding when there is a command with no associated text.  There could be a wait time depending on the command.  For example, a background change with a transition might have a delay before forwarding, while a character entrance or exit might not need one, or it might need a shorter one.
             if (LineNumber >= CurrentChapter.Text.Count)
             {
+                CurrentChapter = new GuildInterviewJin();
                 LineNumber = 0;
                 Debug.LogWarning("Chapter restarted. Advancing to the next chapter not yet implemented.", this);
                 //TODO signal the end of the chapter and call GoNextChapter();
@@ -183,7 +195,6 @@ namespace PopKuru
 
                 // TODO // Simple move command that is not enter exit
 
-
                 if (command.CommandName == CommandName.changeBackground)
                 {
                     BackgroundManager.LoadBackground(command.ImageName);
@@ -204,8 +215,27 @@ namespace PopKuru
 
             // Call text manager on the current line
             TextManager.ReadLine(CurrentLine);
-
+            if (CurrentLine.StoryText != null)
+            {
+                // Speaker name from text manager
+                // Thumbnail from scene manager
+                foreach (Character character in Characters)
+                {
+                    if (character.Name == TextManager.CurrentSpeaker)
+                    {
+                        setThumb(character);
+                    }
+                }
+                Debug.Log("Current speaker is " + TextManager.CurrentSpeaker);
+            }
+            
             LineNumber++;
+        }
+
+        void setThumb(Character character)
+        {
+            // Ref the game object.
+            ThumbHook.sprite = character.Thumbnail;
         }
 
         // TODO Transition to the next scene // Changes scene type

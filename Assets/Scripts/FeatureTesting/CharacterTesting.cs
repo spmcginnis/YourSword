@@ -30,7 +30,7 @@ namespace PopKuru
                         new Command(changeBackground, guildHall1),
                         new Command(enter, cassandra, right),
                         new Command(enter, lua, right),
-                        new Command(enter, salvador, right)
+                        new Command(enter, salvador, center)
                     }
                 )},
                 {new Line(

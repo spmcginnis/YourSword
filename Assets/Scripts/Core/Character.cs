@@ -16,13 +16,15 @@ namespace PopKuru
         public RectTransform RT {get; private set;}
         Image Face;
         Image Body;
+        public Sprite Thumbnail {get; private set;}
 
-        public Character(CharName charName, GameObject prefab)
+        public Character(CharName charName, GameObject prefab, Sprite thumbnail)
         {          
             // Initialize Name
             this.Name = charName;
             this.Prefab = prefab;
             this.RT = this.Prefab.GetComponent<RectTransform>();
+            this.Thumbnail = thumbnail;
             
             Image[] imageComps = Prefab.GetComponentsInChildren<Image>();
             this.Body = imageComps[0];
