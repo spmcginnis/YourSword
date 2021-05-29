@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 4603708005871595531, guid: 05f25581f892b104d842f5f0dd8a9676, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: f74ce194cfc71334882589249efe641b, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 7277932108779166975, guid: 05f25581f892b104d842f5f0dd8a9676, type: 3}
       propertyPath: m_Name
       value: Character[Auden]

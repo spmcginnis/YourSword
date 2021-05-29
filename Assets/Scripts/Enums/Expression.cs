@@ -89,6 +89,26 @@ namespace PopKuru
                     ["Body"] = "Images/Characters/Margot/MargotBody1Template",
                     ["Face"] = "Images/Characters/Margot/MargotBody1Smile"
                 },
+                [Expression.soft] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Margot/MargotBody1Template",
+                    ["Face"] = "Images/Characters/Margot/MargotBody1Smile"
+                },
+                [Expression.flirty] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Margot/MargotBody1Template",
+                    ["Face"] = "Images/Characters/Margot/MargotBody1Smile"
+                },
+                [Expression.cheerful] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Margot/MargotBody1Template",
+                    ["Face"] = "Images/Characters/Margot/MargotBody1Smile"
+                },
+                [Expression.neutral] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Margot/MargotBody1Template",
+                    ["Face"] = "Images/Characters/Margot/MargotBody1Smile"
+                },
                 [Expression.disgusted] = new Dictionary<string, string>
                 {
                     ["Body"] = "Images/Characters/Margot/MargotBody1Template",
@@ -99,7 +119,22 @@ namespace PopKuru
                     ["Body"] = "Images/Characters/Margot/MargotBody1Template",
                     ["Face"] = "Images/Characters/Margot/MargotBody1Exasperated"
                 },
+                [Expression.confused] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Margot/MargotBody1Template",
+                    ["Face"] = "Images/Characters/Margot/MargotBody1Exasperated"
+                },
                 [Expression.startled] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Margot/MargotBody1Template",
+                    ["Face"] = "Images/Characters/Margot/MargotBody1Concerned2"
+                },
+                [Expression.surprised] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Margot/MargotBody1Template",
+                    ["Face"] = "Images/Characters/Margot/MargotBody1Concerned2"
+                },
+                [Expression.sad] = new Dictionary<string, string>
                 {
                     ["Body"] = "Images/Characters/Margot/MargotBody1Template",
                     ["Face"] = "Images/Characters/Margot/MargotBody1Concerned2"
@@ -124,10 +159,30 @@ namespace PopKuru
                     ["Body"] = "Images/Characters/Margot/MargotBody1Template",
                     ["Face"] = "Images/Characters/Margot/MargotBody1SmileBlink"
                 },
+                [Expression.blushing] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Margot/MargotBody1Template",
+                    ["Face"] = "Images/Characters/Margot/MargotBody1SmileBlink"
+                },
+                [Expression.superblushing] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Margot/MargotBody1Template",
+                    ["Face"] = "Images/Characters/Margot/MargotBody1SmileBlink"
+                },
                 [Expression.skeptical] = new Dictionary<string, string>
                 {
                     ["Body"] = "Images/Characters/Margot/MargotBody1Template",
                     ["Face"] = "Images/Characters/Margot/MargotBody1Concerned1"
+                },
+                [Expression.annoyed] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Margot/MargotBody1Template",
+                    ["Face"] = "Images/Characters/Margot/MargotBody1Concerned1"
+                },
+                [Expression.tearful] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Margot/MargotBody1Template",
+                    ["Face"] = "Images/Characters/Margot/MargotBody1Concerned2"
                 }
             };
         public static Dictionary<Expression, Dictionary<string, string>> Jin =
@@ -138,7 +193,22 @@ namespace PopKuru
                     ["Body"] = "Images/Characters/Jin/Jin1Body",
                     ["Face"] = "Images/Characters/Jin/Jin1FaceSmile"
                 },
+                [Expression.neutral] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Jin/Jin1Body",
+                    ["Face"] = "Images/Characters/Jin/Jin1FaceSmile"
+                },
                 [Expression.pleasant] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Jin/Jin1Body",
+                    ["Face"] = "Images/Characters/Jin/Jin1FaceSmile"
+                },
+                [Expression.soft] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Jin/Jin1Body",
+                    ["Face"] = "Images/Characters/Jin/Jin1FaceSmile"
+                },
+                [Expression.cheerful] = new Dictionary<string, string>
                 {
                     ["Body"] = "Images/Characters/Jin/Jin1Body",
                     ["Face"] = "Images/Characters/Jin/Jin1FaceSmile"
@@ -158,7 +228,52 @@ namespace PopKuru
                     ["Body"] = "Images/Characters/Jin/Jin1Body",
                     ["Face"] = "Images/Characters/Jin/Jin1FaceFrown"
                 },
+                [Expression.angry] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Jin/Jin1Body",
+                    ["Face"] = "Images/Characters/Jin/Jin1FaceFrown"
+                },
+                [Expression.annoyed] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Jin/Jin1Body",
+                    ["Face"] = "Images/Characters/Jin/Jin1FaceFrown"
+                },
+                [Expression.sad] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Jin/Jin1Body",
+                    ["Face"] = "Images/Characters/Jin/Jin1FaceFrown"
+                },
+                [Expression.tearful] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Jin/Jin1Body",
+                    ["Face"] = "Images/Characters/Jin/Jin1FaceFrown"
+                },
+                [Expression.confused] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Jin/Jin1Body",
+                    ["Face"] = "Images/Characters/Jin/Jin1FaceFrown"
+                },
+                [Expression.surprised] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Jin/Jin1Body",
+                    ["Face"] = "Images/Characters/Jin/Jin1FaceFrown"
+                },
                 [Expression.smirk] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Jin/Jin1Body",
+                    ["Face"] = "Images/Characters/Jin/Jin1FaceSmile"
+                },
+                [Expression.blushing] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Jin/Jin1Body",
+                    ["Face"] = "Images/Characters/Jin/Jin1FaceSmile"
+                },
+                [Expression.superblushing] = new Dictionary<string, string>
+                {
+                    ["Body"] = "Images/Characters/Jin/Jin1Body",
+                    ["Face"] = "Images/Characters/Jin/Jin1FaceSmile"
+                },
+                [Expression.flirty] = new Dictionary<string, string>
                 {
                     ["Body"] = "Images/Characters/Jin/Jin1Body",
                     ["Face"] = "Images/Characters/Jin/Jin1FaceSmile"
