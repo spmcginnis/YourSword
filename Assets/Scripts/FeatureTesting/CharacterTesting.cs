@@ -19,7 +19,7 @@ namespace PopKuru
             };
             this.CastOfCharacters = new List<CharName>()
             {
-               cassandra, lua, salvador
+               cassandra, lua, salvador, jin, margot, greylin, auden
             };
 
             this.Text = new List<Line>()
@@ -29,8 +29,12 @@ namespace PopKuru
                     {
                         new Command(changeBackground, guildHall1),
                         new Command(enter, cassandra, right),
-                        new Command(enter, lua, right),
-                        new Command(enter, salvador, center)
+                        new Command(enter, lua, left),
+                        new Command(enter, jin, center),
+                        new Command(enter, salvador, left),
+                        new Command(enter, margot, right),
+                        new Command(enter, greylin, left),
+                        new Command(enter, auden, right)
                     }
                 )},
                 {new Line(

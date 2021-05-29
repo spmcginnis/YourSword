@@ -55,8 +55,8 @@ namespace PopKuru
             SceneManager = GameObject.Find("Managers").GetComponent<SceneManager>();
             
             // TEMP // TODO get the information from gamestate 
-            // CurrentChapter = new CharacterTesting();
-            CurrentChapter = new GuildInterviewJin();
+            CurrentChapter = new CharacterTesting();
+            // CurrentChapter = new GuildInterviewJin();
                 // The awake call will happen on game start, right? so this should call the loading and title scenes (?)
             
             NextChapterChoices = new List<ScreenPlay>() // TEMP // TODO get the information from gamestate
