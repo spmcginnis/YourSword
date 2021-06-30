@@ -2,6 +2,7 @@
 /WorkingFolder
 *.png
 *.jpg
+/TextTransforms/Input
 
 # Unity gitignore Settings Start here
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
